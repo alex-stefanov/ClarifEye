@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarifEye.Data", "ClarifEye.Data.csproj", "{7F2F8068-4007-446C-8E54-A48A36E745F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarifEye.Data", "ClarifEye.Data\ClarifEye.Data.csproj", "{7F2F8068-4007-446C-8E54-A48A36E745F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarifEye.Web", "..\ClarifEye.Web\ClarifEye.Web.csproj", "{3FCFEE02-2E61-4099-85AC-32027744689C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarifEye.Web", "ClarifEye.Web\ClarifEye.Web.csproj", "{3FCFEE02-2E61-4099-85AC-32027744689C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarifEye.Infrastructure", "..\ClarifEye.Infrastructure\ClarifEye.Infrastructure.csproj", "{D0F417CF-E080-4064-9BAE-2AD3C84783AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarifEye.Infrastructure", "ClarifEye.Infrastructure\ClarifEye.Infrastructure.csproj", "{D0F417CF-E080-4064-9BAE-2AD3C84783AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
