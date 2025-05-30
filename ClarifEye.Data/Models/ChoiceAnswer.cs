@@ -10,12 +10,13 @@ namespace ClarifEye.Data.Models
 {
     public class ChoiceAnswer
     {
-        public int Id { get; set; }
+        [Key]
+        public int ChoiceAnswerId { get; set; }
         [ForeignKey(nameof(Choice))]
         public int ChoiceId { get; set; } //Choosed Answer
         public Choice Choice { get; set; }
         [ForeignKey(nameof(ClarUser))]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public ClarUser User { get; set; }
     }
 }

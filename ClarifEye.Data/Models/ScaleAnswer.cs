@@ -1,6 +1,7 @@
 ﻿using ClarifEye.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace ClarifEye.Data.Models
 {
     public class ScaleAnswer
     {
+        [Key]
+        public int ScaleAnswerId { get; set; }
         public ScaleEnum SelectedOption { get; set; } //Selected Answer
         [ForeignKey(nameof(ScaleQuestion))]
         public int ScaleQuestionId { get; set; }

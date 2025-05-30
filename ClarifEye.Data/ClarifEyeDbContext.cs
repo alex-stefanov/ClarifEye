@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using ClarifEye.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +21,7 @@ public class ClarifEyeDbContext
         if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder.UseSqlServer(
-                "Server=localhost,1433;Database=Clarify;User Id=sa;Password=Str0ngPa$$w0rd;TrustServerCertificate=True");
+                "Server=DESKTOP-S220U88\\SQLEXPRESS;Database=ClarifEye;Integrated Security=true;TrustServerCertificate=true;MultipleActiveResultSets=true");
         }
     }
 
@@ -32,4 +33,13 @@ public class ClarifEyeDbContext
         modelBuilder.ApplyConfigurationsFromAssembly(
             Assembly.GetExecutingAssembly());
     }
+
+    public DbSet<ClarUser> Users { get; set; }
+    public DbSet<MultipleChoiceQuestion> MultipleChoiceQuestions { get; set; }
+    public DbSet<Choice> Choices { get; set; }
+    public DbSet<ChoiceAnswer> ChoiceAnswers { get; set; }
+    public DbSet<ScaleQuestion> ScaleQuestions { get; set; }
+    public DbSet<ScaleAnswer> ScaleAnswers { get; set; }
+    public DbSet<YesNoQuestion> YesNoQuestions { get; set; }
+    public DbSet<YesNoAnswer> YesNoAnswers { get; set; }
 }
