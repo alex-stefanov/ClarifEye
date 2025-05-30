@@ -11,6 +11,8 @@ namespace ClarifEye.Data.Models
 {
     public class YesNoAnswer
     {
+        [Key]
+        public int YesNoAnswerId { get; set; }
         public YesNoEnum SelectedOption { get; set; }
         [ForeignKey(nameof(YesNoQuestion))]
         public int YesNoQuestionId { get; set; }
