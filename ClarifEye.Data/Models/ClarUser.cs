@@ -14,4 +14,7 @@ public class ClarUser : IdentityUser
     public int Age { get; set; }
     public Gender Enum { get; set; }
     public string Occupation { get; set; }
+    public ICollection<ChoiceAnswer> ChoosedAnswers = new List<ChoiceAnswer>();
+    public ICollection<YesNoAnswer> YesNoAnswers = new List<YesNoAnswer>();
+    public ICollection<ScaleAnswer> ScaleAnswers = new List<ScaleAnswer>();
 }
