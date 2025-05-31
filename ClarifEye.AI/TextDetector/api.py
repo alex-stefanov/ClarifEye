@@ -4,7 +4,7 @@ import uvicorn
 
 app = FastAPI()
 
-@app.post("/detect-text")
+@app.post("/text/detect")
 async def detect_text_endpoint(file: UploadFile = File(...)):
     contents = await file.read()
     result = extract_text(contents)
