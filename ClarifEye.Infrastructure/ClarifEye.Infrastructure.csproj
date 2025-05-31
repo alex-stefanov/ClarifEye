@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClarifEye.Common\ClarifEye.Common.csproj" />
+    <ProjectReference Include="..\ClarifEye.Data\ClarifEye.Data.csproj" />
   </ItemGroup>
 
 </Project>
