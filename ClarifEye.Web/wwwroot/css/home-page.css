@@ -659,6 +659,11 @@ progress {
     width: 100%;
 }
 
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 @media (min-width: 576px) {
     .container-sm, .container {
         max-width: 540px;
@@ -673,7 +678,7 @@ progress {
 
 @media (min-width: 992px) {
     .container-lg, .container-md, .container-sm, .container {
-        max-width: 960px;
+        max-width: 1500px;
     }
 }
 
@@ -12669,7 +12674,7 @@ header.masthead {
 }
 
 .traffic-file-label {
-    background-color: #4CAF50;
+    background-color: #519E8A;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -12693,11 +12698,14 @@ header.masthead {
 #traffic-file-input3 {
     display: none;
 }
+#traffic-file-input4 {
+    display: none;
+}
 
 .traffic-submit-button {
     padding: 0.7rem 1.5rem;
-    background-color: #007BFF;
     color: white;
+    background-color: #35393d;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -12706,9 +12714,16 @@ header.masthead {
     display: block;
 }
 
-    .traffic-submit-button:hover {
-        background-color: #0056b3;
-    }
+#footer-social{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.traffic-submit-button:hover {
+    background-color: #0056b3;
+}
 
         #portfolio .portfolio-item .portfolio-link .portfolio-hover {
             display: flex;
@@ -12736,6 +12751,8 @@ header.masthead {
         text-align: center;
         background-color: #fff;
     }
+
+
 
         #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
             font-size: 1.5rem;

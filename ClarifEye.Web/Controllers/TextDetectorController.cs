@@ -5,25 +5,33 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClarifEye.Web.Controllers
 {
-    [Route("textdetector")]
-    public class TextDetectorController (ITranslatorService service, ITextToSpeechService ttsService, HttpClient httpClient) : Controller
+    public class TextDetectorController (
+        ITranslatorService service,
+        ITextToSpeechService ttsService) : Controller
     {
+        private readonly HttpClient httpClient = new();
+
         [HttpGet]
         public IActionResult Index(string result)
-        {
-            TextResultViewModel resultViewModel = new TextResultViewModel();
-            resultViewModel.Text = result;
-            resultViewModel.Language = Common.Enums.Language.English;
+       {
+            TextResultViewModel resultViewModel = new()
+            {
+                Text = result,
+                Language = Common.Enums.Language.English
+            };
+
             return View(resultViewModel);
         }
         [HttpGet]
-        public async Task<IActionResult> Translate (TextResultViewModel model)
+        public async Task<IActionResult> Translate (string text, Language language)
         {
-            string result = await service.TranslateTextAsync(model.Text, model.Language ?? Language.English);
-            return RedirectToAction("Index", result);
+
+            string result = await service.TranslateTextAsync(text, language);
+            return RedirectToAction("Index", new { result = result});
         }
 
-        public async Task<IActionResult> Speak([FromQuery] string text, [FromQuery] string voice = "nova")
+        [Route("textdetector/speak/{text}")]
+        public async Task<IActionResult> Speak(string text, [FromQuery] string voice = "nova")
         {
             if (string.IsNullOrWhiteSpace(text))
                 return BadRequest("Text is required.");

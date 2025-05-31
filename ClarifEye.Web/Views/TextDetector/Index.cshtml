@@ -1,37 +1,44 @@
 ﻿﻿@using ClarifEye.Web.Models;
+@using ClarifEye.Common.Enums;
 @model TextResultViewModel
 
 @{
     ViewData["Title"] = "Text Detector";
+    var languages = Enum.GetValues(typeof(Language)).Cast<Language>();
 }
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Play TTS</title>
-    <style>
-        .speaker-icon {
-            cursor: pointer;
-            font-size: 32px;
+<div id="trans-container">
+    <select id="languageSelect" class="form-select">
+        @foreach (var lang in languages)
+        {
+            var selected = lang == Model.Language ? "selected" : "";
+            <option value="@lang" selected="@selected">@lang</option>
         }
-    </style>
-</head>
-<body>
+    </select>
 
-    <span class="speaker-icon" onclick="playTTS('@Model.Text')">🔊</span>
-    <audio id="ttsPlayer" hidden></audio>
+    <button id="translateBtn" class="btn btn-primary mt-2">Translate</button>
+</div>
 
-    <script>
-        async function playTTS(text) {
-            const audio = document.getElementById('ttsPlayer');
-            const encodedText = encodeURIComponent(text);
-            const url = /textdetector/speak?text=${encodedText};
+<script src="~/js/text.js"></script>
+<input type="hidden" id="text" value="@Model.Text"/>
 
-            audio.src = url;
-            audio.play();
-        }
-    </script>
+<span class="speaker-icon">🔊</span>
+<audio id="ttsPlayer" hidden></audio>
 
-</body>
-</html>
+<style>
+    .speaker-icon {
+        position:absolute;
+        top: 500px;
+        cursor: pointer;
+        font-size: 32px;
+    }
+
+    .form-select {
+        margin-top: 20px;
+        width: 200px;
+    }
+
+    #trans-container{
+        position: absolute;
+        top: 500px;
+    }
+</style>

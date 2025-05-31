@@ -4,6 +4,7 @@ using ClarifEye.Web.Extensions;
 using ClarifEye.Data;
 using Microsoft.EntityFrameworkCore;
 using OpenAI_API;
+using ClarifEye.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,14 +20,14 @@ builder.Services
     });
 
 builder.Services
-    .AddDefaultIdentity<IdentityUser>(options =>
+    .AddDefaultIdentity<ClarUser>(options =>
     {
         options.SignIn.RequireConfirmedAccount = false;
     })
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ClarifEyeDbContext>()
-    .AddUserManager<UserManager<IdentityUser>>()
-    .AddSignInManager<SignInManager<IdentityUser>>();
+    .AddUserManager<UserManager<ClarUser>>()
+    .AddSignInManager<SignInManager<ClarUser>>();
 
 builder.Services.AddSingleton<OpenAIAPI>(sp =>
 {
