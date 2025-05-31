@@ -10,4 +10,13 @@
         audio.src = url;
         audio.play();
     });
+
+    const translateBtn = document.getElementById('translateBtn');
+    translateBtn.addEventListener('click', function () {
+        const text = document.getElementById('text').value;
+        const language = document.getElementById('languageSelect').value;
+        const encodedText = encodeURIComponent(text);
+
+        window.location.href = `/textdetector/translate?text=${encodedText}&language=${language}`;
+    });
 });
