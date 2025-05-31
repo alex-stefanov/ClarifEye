@@ -1,4 +1,7 @@
-﻿namespace ClarifEye.Web.Extensions;
+﻿using ClarifEye.Infrastructure.Implementations;
+using ClarifEye.Infrastructure.Interfaces;
+
+namespace ClarifEye.Web.Extensions;
 
 public static class ServiceCollectionExtensions
 {
@@ -13,7 +16,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection RegisterUserDefinedServices(
         this IServiceCollection services)
     {
-        //services.AddScoped<ICropBazarService, CropBazarService>();
+        services.AddScoped<IDetectorService, DetectorService>();
 
         return services;
     }
