@@ -1,0 +1,65 @@
+﻿@using ClarifEye.Data.Enums
+@model SurveyViewModel
+
+<form asp-action="SubmitSurvey" asp-controller="Survey">
+    @for (int i = 0; i < Model.FirstPart.Count; i++)
+    {
+        <p>@Model.FirstPart[i].QuestionText</p>
+        <input type="radio" name="ScaleAnswers[@i].QuestionId" value="@Model.FirstPart[i].ScaleQuestionId" />
+        @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
+        {
+            <label>@enumValue</label>
+            <input type="radio" name="ScaleAnswers[@i].Answer" value="@enumValue" />
+        }
+    }
+
+    @for (int i = 0; i < Model.SecondPart.Count; i++)
+    {
+        <p>@Model.SecondPart[i].QuestionText</p>
+        <input type="radio" name="ScaleAnswers[@i].QuestionId" value="@Model.SecondPart[i].ScaleQuestionId" />
+        @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
+        {
+            <label>@enumValue</label>
+            <input type="radio" name="ScaleAnswers[@i].Answer" value="@enumValue" />
+        }
+    }
+
+    @for (int i = 0; i < Model.ThirdPart.Count; i++)
+    {
+        <p>@Model.ThirdPart[i].QuestionText</p>
+        <input type="radio" name="ScaleAnswers[@i].QuestionId" value="@Model.ThirdPart[i].ScaleQuestionId" />
+        @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
+        {
+            <label>@enumValue</label>
+            <input type="radio" name="ScaleAnswers[@i].Answer" value="@enumValue" />
+        }
+    }
+
+    @for (int i = 0; i < Model.FourthPart.Count; i++)
+    {
+        <p>@Model.FourthPart[i].QuestionText</p>
+        <input type="radio" name="ScaleAnswers[@i].QuestionId" value="@Model.FourthPart[i].YesNoQuestionId" />
+        @foreach (var enumValue in Enum.GetValues<YesNoEnum>())
+        {
+            <label>@enumValue</label>
+            <input type="radio" name="YesNoAnswers[@i].Answer" value="@enumValue" />
+        }
+    }
+    <p>@Model.FifthPart.Item1.QuestionString</p>
+    @for (int i = 0; i < Model.FifthPart.Item1.Choices.Count; i++)
+    {
+        <label>@Model.FifthPart.Item1.Choices.ToList()[i].AnswerString</label>
+        <input type="radio" name="ChoiceAnswerIds" value="@Model.FifthPart.Item1.Choices.ToList()[i]">
+    }
+    <p>@Model.FifthPart.Item2.QuestionText</p>
+    @for (int i = 0; i < 2; i++)
+    {
+        @foreach (var enumValue in Enum.GetValues<YesNoEnum>())
+        {
+            <label>@enumValue</label>
+            <input type="radio" name="YesNoAnswers[@i].Answers" value="@enumValue">
+        }
+    }
+
+    <button type="submit">Submit</button>
+</form>
