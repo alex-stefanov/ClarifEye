@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ClarifEye.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,11 +30,13 @@ namespace ClarifEye.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Age = table.Column<int>(type: "int", nullable: false),
-                    Enum = table.Column<int>(type: "int", nullable: false),
-                    Occupation = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Age = table.Column<int>(type: "int", nullable: true),
+                    Enum = table.Column<int>(type: "int", nullable: true),
+                    IsFilled = table.Column<bool>(type: "bit", nullable: true),
+                    Occupation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -140,8 +142,8 @@ namespace ClarifEye.Data.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -185,8 +187,8 @@ namespace ClarifEye.Data.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -248,7 +250,7 @@ namespace ClarifEye.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "YesNoQuestion",
+                name: "YesNoAnswers",
                 columns: table => new
                 {
                     YesNoAnswerId = table.Column<int>(type: "int", nullable: false)
@@ -259,15 +261,15 @@ namespace ClarifEye.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_YesNoQuestion", x => x.YesNoAnswerId);
+                    table.PrimaryKey("PK_YesNoAnswers", x => x.YesNoAnswerId);
                     table.ForeignKey(
-                        name: "FK_YesNoQuestion_AspNetUsers_ClarUserId",
+                        name: "FK_YesNoAnswers_AspNetUsers_ClarUserId",
                         column: x => x.ClarUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_YesNoQuestion_YesNoQuestions_YesNoQuestionId",
+                        name: "FK_YesNoAnswers_YesNoQuestions_YesNoQuestionId",
                         column: x => x.YesNoQuestionId,
                         principalTable: "YesNoQuestions",
                         principalColumn: "YesNoQuestionId",
@@ -365,13 +367,13 @@ namespace ClarifEye.Data.Migrations
                 column: "ScaleQuestionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_YesNoQuestion_ClarUserId",
-                table: "YesNoQuestion",
+                name: "IX_YesNoAnswers_ClarUserId",
+                table: "YesNoAnswers",
                 column: "ClarUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_YesNoQuestion_YesNoQuestionId",
-                table: "YesNoQuestion",
+                name: "IX_YesNoAnswers_YesNoQuestionId",
+                table: "YesNoAnswers",
                 column: "YesNoQuestionId");
         }
 
@@ -400,7 +402,7 @@ namespace ClarifEye.Data.Migrations
                 name: "ScaleAnswers");
 
             migrationBuilder.DropTable(
-                name: "YesNoQuestion");
+                name: "YesNoAnswers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

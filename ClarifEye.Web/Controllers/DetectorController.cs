@@ -5,9 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClarifEye.Web.Controllers
 {
-    public class DetectorController(IDetectorService detectorService, HttpClient httpClient)
+    public class DetectorController(IDetectorService detectorService)
         : Controller
     {
+        private readonly HttpClient httpClient = new();
         public IActionResult Index()
         {
             return View();
