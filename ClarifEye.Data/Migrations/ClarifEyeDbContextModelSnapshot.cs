@@ -135,11 +135,6 @@ namespace ClarifEye.Data.Migrations
                         {
                             MultipleChoiceQuestionId = 1,
                             QuestionString = "When was your last eye exam?"
-                        },
-                        new
-                        {
-                            MultipleChoiceQuestionId = 2,
-                            QuestionString = "How often do you use eye protection (e.g., sunglasses, safety goggles) when needed?"
                         });
                 });
 
@@ -878,11 +873,11 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3f61ab8c-5f0d-4414-a890-eeb6321b704a",
+                            ConcurrencyStamp = "57a86388-9a4a-4a05-811b-62cdcb95ae0b",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6014c79c-a4c9-43f2-82d2-05dca97ab3b7",
+                            SecurityStamp = "1459bf77-0e1e-4f1b-9d2a-9b660638119e",
                             TwoFactorEnabled = false,
                             Age = 34,
                             Enum = 0,
@@ -895,11 +890,11 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0462e7a2-d7d8-4a8e-a103-6f1845d3ae07",
+                            ConcurrencyStamp = "c02952f7-9d5a-42c9-b126-77a648b18391",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "59bc3649-4f5c-4fa5-b249-01b7ffd77d50",
+                            SecurityStamp = "a2c6c286-2864-4801-a25f-e7656900923c",
                             TwoFactorEnabled = false,
                             Age = 28,
                             Enum = 1,
@@ -912,11 +907,11 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fab4b1e3-b22d-4e0c-a186-cf3c9f49179a",
+                            ConcurrencyStamp = "27a63e97-24a5-4994-83b2-853aa8e912d1",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "02b94d42-dd56-4148-9b59-094330601d14",
+                            SecurityStamp = "1e518357-277d-4cdc-acc2-62707d5616d7",
                             TwoFactorEnabled = false,
                             Age = 45,
                             Enum = 0,
@@ -929,11 +924,11 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cd6dc205-851c-45b6-80eb-142c13b5ee92",
+                            ConcurrencyStamp = "0e0ec446-cf47-4a8c-8cb7-f0a9e55653d1",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f8ba5564-63f8-45d2-be12-42fde21eefd4",
+                            SecurityStamp = "c931a4fd-2846-40d0-a935-7e2471bbdc8c",
                             TwoFactorEnabled = false,
                             Age = 22,
                             Enum = 1,
@@ -946,11 +941,11 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ddaf7157-7e31-45e2-af56-bc1c254aceca",
+                            ConcurrencyStamp = "9e7721a2-c993-46d6-931f-a5a73d02dfa7",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4e46ecaa-fab7-4824-b129-11a96a620590",
+                            SecurityStamp = "94f1ca17-5537-45bd-b49b-f845330d52ed",
                             TwoFactorEnabled = false,
                             Age = 39,
                             Enum = 0,
