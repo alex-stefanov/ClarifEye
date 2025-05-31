@@ -23,22 +23,28 @@
                 <h3>The color of the traffic light:</h3>
                 @if (@ViewBag.TrafficLightValue == 0)
                 {
-                    <p id="color-light">Red</p>
+                    <p id="color-light" style="text-align: center; font-weight: 800">Red</p>
                 }
                 else if (@ViewBag.TrafficLightValue == 1)
                 {
-                    <p id="color-light">Green</p>
+                    <p id="color-light" style="text-align: center; font-weight: 800">Green</p>
                 }
                 else if (@ViewBag.TrafficLightValue == 2)
                 {
-                    <p id="color-light">Yellow</p>
+                    <p id="color-light" style="text-align: center; font-weight: 800">Yellow</p>
                 }
             </div>
         </div>
 
         <div style="width: 2px; height: 200px; background-color: #1c1f1d; margin: 10px auto;"></div>
 
-        <div id="traffic-light-desc">edfhefevfgsdevfghsvdfgsvdvsdcvsgdh df whge fghwefhwe fwghfsgh dfh sahgsfd gfd fsgffdhg fsgd fsgdf hfsdghffs gfsehg g f sdf gsdfhg fsdg f</div>
+        <div id="traffic-light-desc" style="font-size: 20px; font-weight: 600">
+            Our smart glasses feature advanced traffic light recognition, designed for the 300 million people worldwide with color blindness.
+            Many struggle to drive safely due to difficulty distinguishing red and green lights.
+
+            With AI-powered detection, users can now identify signals confidently and regain mobility.
+            This opens new paths to independence, jobs, and freedom—it's more than tech, it's a chance to reclaim the road.
+        </div>
     </div>
     
 </div>
