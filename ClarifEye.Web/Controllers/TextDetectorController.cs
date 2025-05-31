@@ -14,16 +14,19 @@ namespace ClarifEye.Web.Controllers
         [HttpGet]
         public IActionResult Index(string result)
        {
-            TextResultViewModel resultViewModel = new TextResultViewModel();
-            resultViewModel.Text = result;
-            resultViewModel.Language = Common.Enums.Language.English;
+            TextResultViewModel resultViewModel = new()
+            {
+                Text = result,
+                Language = Common.Enums.Language.English
+            };
+
             return View(resultViewModel);
         }
         [HttpGet]
-        public async Task<IActionResult> Translate (TextResultViewModel model)
+        public async Task<IActionResult> Translate (string text, Language language)
         {
-            string result = await service.TranslateTextAsync(model.Text, model.Language ?? Language.English);
-            return RedirectToAction("Index", result);
+            string result = await service.TranslateTextAsync(text, language);
+            return RedirectToAction("Index", new { result = result});
         }
 
         [Route("textdetector/speak/{text}")]

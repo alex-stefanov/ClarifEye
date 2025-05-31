@@ -28,29 +28,5 @@ namespace ClarifEye.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        [HttpPost]
-        public IActionResult HandleVisionMode(IFormFile file, string visionMode)
-        {
-            if (file == null || file.Length == 0)
-            {
-                return RedirectToAction("Error", new { message = "No file selected." });
-            }
-
-            switch (visionMode)
-            {
-                case "text":
-                    return RedirectToAction("TextDetector", "Detector");
-
-                case "color":
-                    return RedirectToAction("ColorDetector", "Detector");
-
-                case "traffic":
-                    return RedirectToAction("TrafficLightDetection", "Detector");
-
-                default:
-                    return RedirectToAction("Error", new { message = "Invalid vision mode selected." });
-            }
-        }
     }
 }

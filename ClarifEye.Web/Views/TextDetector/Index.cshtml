@@ -1,9 +1,23 @@
 ﻿﻿@using ClarifEye.Web.Models;
+@using ClarifEye.Common.Enums;
 @model TextResultViewModel
 
 @{
     ViewData["Title"] = "Text Detector";
+    var languages = Enum.GetValues(typeof(Language)).Cast<Language>();
 }
+<div id="trans-container">
+    <select id="languageSelect" class="form-select">
+        @foreach (var lang in languages)
+        {
+            var selected = lang == Model.Language ? "selected" : "";
+            <option value="@lang" selected="@selected">@lang</option>
+        }
+    </select>
+
+    <button id="translateBtn" class="btn btn-primary mt-2">Translate</button>
+</div>
+
 <script src="~/js/text.js"></script>
 <input type="hidden" id="text" value="@Model.Text"/>
 
@@ -16,5 +30,15 @@
         top: 500px;
         cursor: pointer;
         font-size: 32px;
+    }
+
+    .form-select {
+        margin-top: 20px;
+        width: 200px;
+    }
+
+    #trans-container{
+        position: absolute;
+        top: 500px;
     }
 </style>
