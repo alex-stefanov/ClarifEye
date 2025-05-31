@@ -1,6 +1,5 @@
 ﻿using ClarifEye.Common.Enums;
 using ClarifEye.Infrastructure.Interfaces;
-using ClarifEye.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClarifEye.Web.Controllers
