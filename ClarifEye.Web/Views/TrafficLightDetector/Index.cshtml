@@ -2,17 +2,45 @@
 @model ClarifEye.Web.Views.TrafficLightDetector.IndexModel
 @{
 }
-<head>
-    <link rel="stylesheet" href="~/css/trafficLight.css" />
-</head>
+
+@{
+    ViewBag.HideNavbar = true;
+}
+
 <input type="hidden" id="trafficLightValue" value="@ViewBag.TrafficLightValue" />
 
 <div class="traffic-light-wrapper d-flex justify-content-center align-items-center my-5">
-    <div class="traffic-light">
-        <div class="light red"></div>
-        <div class="light yellow"></div>
-        <div class="light green"></div>
+    <h1 id="func-title">Traffic Light Detector</h1>
+    <div id="connector-container">
+		<div id="color-and-traffic-light">
+            <div class="traffic-light">
+                <div class="light red"></div>
+                <div class="light yellow"></div>
+                <div class="light green"></div>
+            </div>
+
+            <div id="colour-of-traffice-light">
+                <h3>The color of the traffic light:</h3>
+                @if (@ViewBag.TrafficLightValue == 0)
+                {
+                    <p id="color-light">Red</p>
+                }
+                else if (@ViewBag.TrafficLightValue == 1)
+                {
+                    <p id="color-light">Green</p>
+                }
+                else if (@ViewBag.TrafficLightValue == 2)
+                {
+                    <p id="color-light">Yellow</p>
+                }
+            </div>
+        </div>
+
+        <div style="width: 2px; height: 200px; background-color: #1c1f1d; margin: 10px auto;"></div>
+
+        <div id="traffic-light-desc">edfhefevfgsdevfghsvdfgsvdvsdcvsgdh df whge fghwefhwe fwghfsgh dfh sahgsfd gfd fsgffdhg fsgd fsgdf hfsdghffs gfsehg g f sdf gsdfhg fsdg f</div>
     </div>
+    
 </div>
 
 <script src="~/js/trafficLight.js"></script>
