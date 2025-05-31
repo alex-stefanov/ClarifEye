@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace ClarifEye.Data.Migrations
 {
     /// <inheritdoc />
@@ -300,6 +302,138 @@ namespace ClarifEye.Data.Migrations
                         principalTable: "Choices",
                         principalColumn: "ChoiceId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Age", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "Enum", "FirstName", "IsFilled", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Occupation", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { "user-1", 0, 34, "3f61ab8c-5f0d-4414-a890-eeb6321b704a", "ClarUser", null, false, 0, "Ivan", false, "Dimitrov", false, null, null, null, "Software Engineer", null, null, false, "6014c79c-a4c9-43f2-82d2-05dca97ab3b7", false, null },
+                    { "user-2", 0, 28, "0462e7a2-d7d8-4a8e-a103-6f1845d3ae07", "ClarUser", null, false, 1, "Maria", false, "Petrova", false, null, null, null, "Graphic Designer", null, null, false, "59bc3649-4f5c-4fa5-b249-01b7ffd77d50", false, null },
+                    { "user-3", 0, 45, "fab4b1e3-b22d-4e0c-a186-cf3c9f49179a", "ClarUser", null, false, 0, "Georgi", false, "Ivanov", false, null, null, null, "Teacher", null, null, false, "02b94d42-dd56-4148-9b59-094330601d14", false, null },
+                    { "user-4", 0, 22, "cd6dc205-851c-45b6-80eb-142c13b5ee92", "ClarUser", null, false, 1, "Elena", false, "Koleva", false, null, null, null, "Student", null, null, false, "f8ba5564-63f8-45d2-be12-42fde21eefd4", false, null },
+                    { "user-5", 0, 39, "ddaf7157-7e31-45e2-af56-bc1c254aceca", "ClarUser", null, false, 0, "Nikolay", false, "Stoyanov", false, null, null, null, "Mechanic", null, null, false, "4e46ecaa-fab7-4824-b129-11a96a620590", false, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "MultipleChoiceQuestions",
+                columns: new[] { "MultipleChoiceQuestionId", "QuestionString" },
+                values: new object[,]
+                {
+                    { 1, "When was your last eye exam?" },
+                    { 2, "How often do you use eye protection (e.g., sunglasses, safety goggles) when needed?" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ScaleQuestions",
+                columns: new[] { "ScaleQuestionId", "QuestionText" },
+                values: new object[,]
+                {
+                    { 1, "Blurry vision" },
+                    { 2, "Double vision" },
+                    { 3, "Difficulty seeing at night" },
+                    { 4, "Halos around lights" },
+                    { 5, "Trouble focusing" },
+                    { 6, "Dry or gritty eyes" },
+                    { 7, "Watery eyes" },
+                    { 8, "Red or bloodshot eyes" },
+                    { 9, "Burning/itching" },
+                    { 10, "Eye pain or pressure" },
+                    { 11, "Headaches after screens" },
+                    { 12, "Eye strain or tiredness" },
+                    { 13, "Sensitivity to light" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "YesNoQuestions",
+                columns: new[] { "YesNoQuestionId", "QuestionText" },
+                values: new object[,]
+                {
+                    { 1, "Do you wear glasses or contact lenses?" },
+                    { 2, "Do you have a family history of eye conditions?" },
+                    { 3, "Have you had eye surgery or trauma before?" },
+                    { 4, "Do you use digital screens for more than 4 hours per day?" },
+                    { 5, "Do you take regular breaks while using screens?" },
+                    { 6, "Are you currently experiencing any vision-related problems?" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Choices",
+                columns: new[] { "ChoiceId", "AnswerString", "MultipleChoiceQuestionId" },
+                values: new object[,]
+                {
+                    { 1, "Less than 1 year ago", 1 },
+                    { 2, "1–2 years ago", 1 },
+                    { 3, "More than 2 years ago", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ScaleAnswers",
+                columns: new[] { "ScaleAnswerId", "ClarUserId", "ScaleQuestionId", "SelectedOption" },
+                values: new object[,]
+                {
+                    { 1, "user-1", 1, 0 },
+                    { 2, "user-1", 2, 0 },
+                    { 3, "user-1", 3, 0 },
+                    { 4, "user-1", 4, 0 },
+                    { 5, "user-1", 5, 0 },
+                    { 6, "user-1", 6, 0 },
+                    { 7, "user-1", 7, 0 },
+                    { 8, "user-1", 8, 0 },
+                    { 9, "user-1", 9, 0 },
+                    { 10, "user-1", 10, 0 },
+                    { 11, "user-1", 11, 0 },
+                    { 12, "user-1", 12, 0 },
+                    { 13, "user-1", 13, 0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "YesNoAnswers",
+                columns: new[] { "YesNoAnswerId", "ClarUserId", "SelectedOption", "YesNoQuestionId" },
+                values: new object[,]
+                {
+                    { 1, "user-1", 1, 1 },
+                    { 2, "user-1", 1, 2 },
+                    { 3, "user-1", 0, 3 },
+                    { 4, "user-1", 1, 4 },
+                    { 5, "user-1", 0, 5 },
+                    { 6, "user-1", 1, 6 },
+                    { 7, "user-2", 1, 1 },
+                    { 8, "user-2", 0, 2 },
+                    { 9, "user-2", 0, 3 },
+                    { 10, "user-2", 1, 4 },
+                    { 11, "user-2", 1, 5 },
+                    { 12, "user-2", 0, 6 },
+                    { 13, "user-3", 0, 1 },
+                    { 14, "user-3", 1, 2 },
+                    { 15, "user-3", 1, 3 },
+                    { 16, "user-3", 1, 4 },
+                    { 17, "user-3", 0, 5 },
+                    { 18, "user-3", 1, 6 },
+                    { 19, "user-4", 2, 1 },
+                    { 20, "user-4", 0, 2 },
+                    { 21, "user-4", 0, 3 },
+                    { 22, "user-4", 1, 4 },
+                    { 23, "user-4", 1, 5 },
+                    { 24, "user-4", 0, 6 },
+                    { 25, "user-5", 1, 1 },
+                    { 26, "user-5", 0, 2 },
+                    { 27, "user-5", 0, 3 },
+                    { 28, "user-5", 1, 4 },
+                    { 29, "user-5", 1, 5 },
+                    { 30, "user-5", 1, 6 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ChoiceAnswers",
+                columns: new[] { "ChoiceAnswerId", "ChoiceId", "UserId" },
+                values: new object[,]
+                {
+                    { 1, 1, "user-1" },
+                    { 2, 2, "user-2" },
+                    { 3, 3, "user-3" },
+                    { 4, 2, "user-5" }
                 });
 
             migrationBuilder.CreateIndex(

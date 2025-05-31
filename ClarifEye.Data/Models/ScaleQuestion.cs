@@ -8,6 +8,6 @@ public class ScaleQuestion
     [Key]
     public int ScaleQuestionId { get; set; }
     public string QuestionText { get; set; }
-    public List<ScaleEnum> Options = new List<ScaleEnum>();
+
 }
 

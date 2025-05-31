@@ -1,0 +1,54 @@
+﻿[
+  {
+    "ScaleQuestionId": 1,
+    "QuestionText": "Blurry vision"
+  },
+  {
+    "ScaleQuestionId": 2,
+    "QuestionText": "Double vision"
+  },
+  {
+    "ScaleQuestionId": 3,
+    "QuestionText": "Difficulty seeing at night"
+  },
+  {
+    "ScaleQuestionId": 4,
+    "QuestionText": "Halos around lights"
+  },
+  {
+    "ScaleQuestionId": 5,
+    "QuestionText": "Trouble focusing"
+  },
+  {
+    "ScaleQuestionId": 6,
+    "QuestionText": "Dry or gritty eyes"
+  },
+  {
+    "ScaleQuestionId": 7,
+    "QuestionText": "Watery eyes"
+  },
+  {
+    "ScaleQuestionId": 8,
+    "QuestionText": "Red or bloodshot eyes"
+  },
+  {
+    "ScaleQuestionId": 9,
+    "QuestionText": "Burning/itching"
+  },
+  {
+    "ScaleQuestionId": 10,
+    "QuestionText": "Eye pain or pressure"
+  },
+  {
+    "ScaleQuestionId": 11,
+    "QuestionText": "Headaches after screens"
+  },
+  {
+    "ScaleQuestionId": 12,
+    "QuestionText": "Eye strain or tiredness"
+  },
+  {
+    "ScaleQuestionId": 13,
+    "QuestionText": "Sensitivity to light"
+  }
+]
