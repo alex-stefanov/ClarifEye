@@ -26,7 +26,6 @@ namespace ClarifEye.Web.Controllers
             return RedirectToAction("Index", result);
         }
 
-        //TODO: when model like it
         [Route("textdetector/speak/{text}")]
         public async Task<IActionResult> Speak(string text, [FromQuery] string voice = "nova")
         {
