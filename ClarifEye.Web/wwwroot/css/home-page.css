@@ -659,6 +659,11 @@ progress {
     width: 100%;
 }
 
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 @media (min-width: 576px) {
     .container-sm, .container {
         max-width: 540px;
@@ -673,7 +678,7 @@ progress {
 
 @media (min-width: 992px) {
     .container-lg, .container-md, .container-sm, .container {
-        max-width: 960px;
+        max-width: 1500px;
     }
 }
 
