@@ -1,7 +1,10 @@
-﻿namespace ClarifEye.Web.Models
+﻿using ClarifEye.Common.Enums;
+
+namespace ClarifEye.Web.Models
 {
     public class TextResultViewModel
     {
-        public string Result { get; set; }
+        public string Text { get; set; }
+        public Language Language { get; set; }
     }
 }
