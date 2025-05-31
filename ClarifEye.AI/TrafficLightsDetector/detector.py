@@ -102,6 +102,21 @@ class TldTrainingSession:
         loss, acc = self.model.evaluate(ds_val, verbose=2)
         print(f"Validation loss: {loss:.4f}, accuracy: {acc:.4f}")
 
+    def predict_from_image(self, image):
+        if not isinstance(image, Image.Image):
+            image = Image.fromarray(image.astype('uint8'), 'RGB')
+
+        image = image.resize((32, 32))
+        img_array = np.array(image).astype(np.float32)
+        img_array = (img_array / 127.5) - 1.0
+        img_array = np.expand_dims(img_array, axis=0)
+
+        preds = self.model.predict(img_array, verbose=0)
+        predicted_class = int(np.argmax(preds, axis=1)[0])
+        class_names = {0: 'backside', 1: 'green', 2: 'red', 3: 'yellow'}
+
+        return predicted_class, class_names.get(predicted_class, 'unknown')
+    
     def predict_single(self, image_path: str):
         """Load image, preprocess and predict its class."""
         image = tf.keras.preprocessing.image.load_img(image_path)
