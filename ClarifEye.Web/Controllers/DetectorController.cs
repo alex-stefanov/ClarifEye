@@ -12,16 +12,10 @@ namespace ClarifEye.Web.Controllers
         {
             return View();
         }
-
-        [HttpGet]
-        public IActionResult TrafficLightsDetector()
-        {
-            return View();
-        }
         [HttpPost]
-        public async Task<IActionResult> TrafficLightsDetector(ImageUploadViewModel model)
+        public async Task<IActionResult> TrafficLightsDetector(IFormFile file)
         {
-            TrafficLight result = await detectorService.DetectTrafficLight(model.ImageFile, httpClient);
+            TrafficLight result = await detectorService.DetectTrafficLight(file, httpClient);
 
 
             return RedirectToAction("Index", "TrafficLightDetector", TrafficLight.Red);
