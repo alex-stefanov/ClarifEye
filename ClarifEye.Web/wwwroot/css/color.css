@@ -10,7 +10,7 @@
   );
     box-shadow: 0 0 20px rgba(255, 60, 60, 0.6);
     animation: splashPulse 1.5s infinite ease-in-out;
-    margin: 50px auto;
+    margin: 10px auto;
 }
 
 @keyframes splashPulse {
@@ -21,4 +21,8 @@
     50% {
         transform: scale(1.05);
     }
+}
+
+#rose-color{
+    width: 400px
 }

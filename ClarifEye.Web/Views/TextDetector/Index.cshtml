@@ -1,4 +1,4 @@
-﻿﻿@using ClarifEye.Web.Models;
+@using ClarifEye.Web.Models;
 @using ClarifEye.Common.Enums;
 @model TextResultViewModel
 
@@ -6,28 +6,45 @@
     ViewData["Title"] = "Text Detector";
     var languages = Enum.GetValues(typeof(Language)).Cast<Language>();
 }
-<div id="trans-container">
-    <select id="languageSelect" class="form-select">
-        @foreach (var lang in languages)
-        {
-            var selected = lang == Model.Language ? "selected" : "";
-            <option value="@lang" selected="@selected">@lang</option>
-        }
-    </select>
 
-    <button id="translateBtn" class="btn btn-primary mt-2">Translate</button>
-</div>
+@{
+    ViewBag.HideNavbar = true;
+}
 
-<script src="~/js/text.js"></script>
-<link rel ="stylesheet" href="~/css/trafficLight.css"/>
-<input type="hidden" id="text" value="@Model.Text"/>
-
-<span class="speaker-icon">🔊</span>
-<audio id="ttsPlayer" hidden></audio>
 
 <div class="traffic-light-wrapper d-flex justify-content-center align-items-center my-5">
     <h1 id="func-title">Traffic Light Detector</h1>
     <div id="connector-container">
+        <div id="translate-container">
+            <div id="trans-container">
+                <select id="languageSelect" class="form-select">
+                    @foreach (var lang in languages)
+                    {
+                        var selected = lang == Model.Language ? "selected" : "";
+                        <option value="@lang" selected="@selected">@lang</option>
+                    }
+                </select>
+
+                <span class="speaker-icon">🔊</span>
+                <audio id="ttsPlayer" hidden></audio>
+
+                <input type="hidden" id="text" value="@Model.Text" />
+            </div>
+            
+            <button id="translateBtn" class="btn btn-primary">Translate</button>
+           
+            <div id="textarea-translate">
+                <textarea readonly class="scrollable-textarea">@Model.Text</textarea>
+
+            </div>
+        </div>
+
+        <div style="width: 2px; height: 200px; background-color: #2c2e2c; margin:5px auto;"></div>
+
+        <div id="traffic-light-desc">edfhefevfgsdevfghsvdfgsvdvsdcvsgdh df whge fghwefhwe fwghfsgh dfh sahgsfd gfd fsgffdhg fsgd fsgdf hfsdghffs gfsehg g f sdf gsdfhg fsdg f</div>
+    </div>
+</div>
+
         <div id="color-and-traffic-light">
             
         </div>
@@ -39,23 +56,3 @@
 
 </div>
 
-<script src="~/js/trafficLight.js"></script>
-
-<style>
-    .speaker-icon {
-        position:absolute;
-        top: 500px;
-        cursor: pointer;
-        font-size: 32px;
-    }
-
-    .form-select {
-        margin-top: 20px;
-        width: 200px;
-    }
-
-    #trans-container{
-        position: absolute;
-        top: 500px;
-    }
-</style>
