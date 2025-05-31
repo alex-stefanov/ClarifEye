@@ -1,0 +1,26 @@
+﻿[
+  {
+    "YesNoQuestionId": 1,
+    "QuestionText": "Do you wear glasses or contact lenses?"
+  },
+  {
+    "YesNoQuestionId": 2,
+    "QuestionText": "Do you have a family history of eye conditions?"
+  },
+  {
+    "YesNoQuestionId": 3,
+    "QuestionText": "Have you had eye surgery or trauma before?"
+  },
+  {
+    "YesNoQuestionId": 4,
+    "QuestionText": "Do you use digital screens for more than 4 hours per day?"
+  },
+  {
+    "YesNoQuestionId": 5,
+    "QuestionText": "Do you take regular breaks while using screens?"
+  },
+  {
+    "YesNoQuestionId": 6,
+    "QuestionText": "Are you currently experiencing any vision-related problems?"
+  }
+]

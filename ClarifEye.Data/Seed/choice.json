@@ -1,0 +1,17 @@
+﻿[
+  {
+    "ChoiceId": 1,
+    "AnswerString": "Less than 1 year ago",
+    "MultipleChoiceQuestionId": 1
+  },
+  {
+    "ChoiceId": 2,
+    "AnswerString": "1–2 years ago",
+    "MultipleChoiceQuestionId": 1
+  },
+  {
+    "ChoiceId": 3,
+    "AnswerString": "More than 2 years ago",
+    "MultipleChoiceQuestionId": 1
+  }
+]

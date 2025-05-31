@@ -1,0 +1,42 @@
+﻿[
+  {
+    "Id": "user-1",
+    "FirstName": "Ivan",
+    "LastName": "Dimitrov",
+    "Age": 34,
+    "Enum": 0,
+    "Occupation": "Software Engineer"
+  },
+  {
+    "Id": "user-2",
+    "FirstName": "Maria",
+    "LastName": "Petrova",
+    "Age": 28,
+    "Enum": 1,
+    "Occupation": "Graphic Designer"
+  },
+  {
+    "Id": "user-3",
+    "FirstName": "Georgi",
+    "LastName": "Ivanov",
+    "Age": 45,
+    "Enum": 0,
+    "Occupation": "Teacher"
+  },
+  {
+    "Id": "user-4",
+    "FirstName": "Elena",
+    "LastName": "Koleva",
+    "Age": 22,
+    "Enum": 1,
+    "Occupation": "Student"
+  },
+  {
+    "Id": "user-5",
+    "FirstName": "Nikolay",
+    "LastName": "Stoyanov",
+    "Age": 39,
+    "Enum": 0,
+    "Occupation": "Mechanic"
+  }
+]

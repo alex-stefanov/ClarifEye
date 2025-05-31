@@ -1,0 +1,186 @@
+﻿[
+  {
+    "YesNoAnswerId": 1,
+    "YesNoQuestionId": 1,
+    "SelectedOption": 1,
+    "ClarUserId": "user-1"
+  },
+  {
+    "YesNoAnswerId": 2,
+    "YesNoQuestionId": 2,
+    "SelectedOption": 1,
+    "ClarUserId": "user-1"
+  },
+  {
+    "YesNoAnswerId": 3,
+    "YesNoQuestionId": 3,
+    "SelectedOption": 0,
+    "ClarUserId": "user-1"
+  },
+  {
+    "YesNoAnswerId": 4,
+    "YesNoQuestionId": 4,
+    "SelectedOption": 1,
+    "ClarUserId": "user-1"
+  },
+  {
+    "YesNoAnswerId": 5,
+    "YesNoQuestionId": 5,
+    "SelectedOption": 0,
+    "ClarUserId": "user-1"
+  },
+  {
+    "YesNoAnswerId": 6,
+    "YesNoQuestionId": 6,
+    "SelectedOption": 1,
+    "ClarUserId": "user-1"
+  },
+
+  {
+    "YesNoAnswerId": 7,
+    "YesNoQuestionId": 1,
+    "SelectedOption": 1,
+    "ClarUserId": "user-2"
+  },
+  {
+    "YesNoAnswerId": 8,
+    "YesNoQuestionId": 2,
+    "SelectedOption": 0,
+    "ClarUserId": "user-2"
+  },
+  {
+    "YesNoAnswerId": 9,
+    "YesNoQuestionId": 3,
+    "SelectedOption": 0,
+    "ClarUserId": "user-2"
+  },
+  {
+    "YesNoAnswerId": 10,
+    "YesNoQuestionId": 4,
+    "SelectedOption": 1,
+    "ClarUserId": "user-2"
+  },
+  {
+    "YesNoAnswerId": 11,
+    "YesNoQuestionId": 5,
+    "SelectedOption": 1,
+    "ClarUserId": "user-2"
+  },
+  {
+    "YesNoAnswerId": 12,
+    "YesNoQuestionId": 6,
+    "SelectedOption": 0,
+    "ClarUserId": "user-2"
+  },
+
+  {
+    "YesNoAnswerId": 13,
+    "YesNoQuestionId": 1,
+    "SelectedOption": 0,
+    "ClarUserId": "user-3"
+  },
+  {
+    "YesNoAnswerId": 14,
+    "YesNoQuestionId": 2,
+    "SelectedOption": 1,
+    "ClarUserId": "user-3"
+  },
+  {
+    "YesNoAnswerId": 15,
+    "YesNoQuestionId": 3,
+    "SelectedOption": 1,
+    "ClarUserId": "user-3"
+  },
+  {
+    "YesNoAnswerId": 16,
+    "YesNoQuestionId": 4,
+    "SelectedOption": 1,
+    "ClarUserId": "user-3"
+  },
+  {
+    "YesNoAnswerId": 17,
+    "YesNoQuestionId": 5,
+    "SelectedOption": 0,
+    "ClarUserId": "user-3"
+  },
+  {
+    "YesNoAnswerId": 18,
+    "YesNoQuestionId": 6,
+    "SelectedOption": 1,
+    "ClarUserId": "user-3"
+  },
+
+  {
+    "YesNoAnswerId": 19,
+    "YesNoQuestionId": 1,
+    "SelectedOption": 2,
+    "ClarUserId": "user-4"
+  },
+  {
+    "YesNoAnswerId": 20,
+    "YesNoQuestionId": 2,
+    "SelectedOption": 0,
+    "ClarUserId": "user-4"
+  },
+  {
+    "YesNoAnswerId": 21,
+    "YesNoQuestionId": 3,
+    "SelectedOption": 0,
+    "ClarUserId": "user-4"
+  },
+  {
+    "YesNoAnswerId": 22,
+    "YesNoQuestionId": 4,
+    "SelectedOption": 1,
+    "ClarUserId": "user-4"
+  },
+  {
+    "YesNoAnswerId": 23,
+    "YesNoQuestionId": 5,
+    "SelectedOption": 1,
+    "ClarUserId": "user-4"
+  },
+  {
+    "YesNoAnswerId": 24,
+    "YesNoQuestionId": 6,
+    "SelectedOption": 0,
+    "ClarUserId": "user-4"
+  },
+
+  {
+    "YesNoAnswerId": 25,
+    "YesNoQuestionId": 1,
+    "SelectedOption": 1,
+    "ClarUserId": "user-5"
+  },
+  {
+    "YesNoAnswerId": 26,
+    "YesNoQuestionId": 2,
+    "SelectedOption": 0,
+    "ClarUserId": "user-5"
+  },
+  {
+    "YesNoAnswerId": 27,
+    "YesNoQuestionId": 3,
+    "SelectedOption": 0,
+    "ClarUserId": "user-5"
+  },
+  {
+    "YesNoAnswerId": 28,
+    "YesNoQuestionId": 4,
+    "SelectedOption": 1,
+    "ClarUserId": "user-5"
+  },
+  {
+    "YesNoAnswerId": 29,
+    "YesNoQuestionId": 5,
+    "SelectedOption": 1,
+    "ClarUserId": "user-5"
+  },
+  {
+    "YesNoAnswerId": 30,
+    "YesNoQuestionId": 6,
+    "SelectedOption": 1,
+    "ClarUserId": "user-5"
+  }
+]
