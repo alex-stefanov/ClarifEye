@@ -4,7 +4,7 @@ namespace ClarifEye.Web.Models
 {
     public class TextResultViewModel
     {
-        public string Text { get; set; }
-        public Language Language { get; set; }
+        public string Text { get; set; } = null!;
+        public Language? Language { get; set; }
     }
 }
