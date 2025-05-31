@@ -26,6 +26,8 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services)
     {
         services.AddScoped<IDetectorService, DetectorService>();
+        services.AddScoped<ITextToSpeechService, TextToSpeechService>();
+        services.AddScoped<ITranslatorService, TranslatorService>();
 
         return services;
     }
