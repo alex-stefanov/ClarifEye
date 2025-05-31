@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClarifEye.Web", "ClarifEye.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClarifEye.Infrastructure", "ClarifEye.Infrastructure\ClarifEye.Infrastructure.csproj", "{D0F417CF-E080-4064-9BAE-2AD3C84783AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarifEye.Common", "ClarifEye.Common\ClarifEye.Common.csproj", "{089BEE1E-D1EE-4BA5-9B74-A203F3FC95D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClarifEye.Common", "ClarifEye.Common\ClarifEye.Common.csproj", "{089BEE1E-D1EE-4BA5-9B74-A203F3FC95D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
