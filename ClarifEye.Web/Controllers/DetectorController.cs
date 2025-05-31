@@ -19,7 +19,7 @@ namespace ClarifEye.Web.Controllers
             TrafficLight result = await detectorService.DetectTrafficLight(file, httpClient);
 
 
-            return RedirectToAction("Index", "TrafficLightDetector", TrafficLight.Red);
+            return RedirectToAction("Index", "TrafficLightDetector", result);
         }
     }
 }
