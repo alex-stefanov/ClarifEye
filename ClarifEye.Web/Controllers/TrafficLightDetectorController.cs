@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClarifEye.Web.Controllers
 {
-    public class TrafficLightDetector : Controller
+    public class TrafficLightDetectorController : Controller
     {
         public IActionResult Index(TrafficLight type)
         {
