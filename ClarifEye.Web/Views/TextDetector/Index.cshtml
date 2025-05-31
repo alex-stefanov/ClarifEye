@@ -19,10 +19,27 @@
 </div>
 
 <script src="~/js/text.js"></script>
+<link rel ="stylesheet" href="~/css/trafficLight.css"/>
 <input type="hidden" id="text" value="@Model.Text"/>
 
 <span class="speaker-icon">🔊</span>
 <audio id="ttsPlayer" hidden></audio>
+
+<div class="traffic-light-wrapper d-flex justify-content-center align-items-center my-5">
+    <h1 id="func-title">Traffic Light Detector</h1>
+    <div id="connector-container">
+        <div id="color-and-traffic-light">
+            
+        </div>
+
+        <div style="width: 2px; height: 200px; background-color: #1c1f1d; margin: 10px auto;"></div>
+
+        <div id="traffic-light-desc">edfhefevfgsdevfghsvdfgsvdvsdcvsgdh df whge fghwefhwe fwghfsgh dfh sahgsfd gfd fsgffdhg fsgd fsgdf hfsdghffs gfsehg g f sdf gsdfhg fsdg f</div>
+    </div>
+
+</div>
+
+<script src="~/js/trafficLight.js"></script>
 
 <style>
     .speaker-icon {
