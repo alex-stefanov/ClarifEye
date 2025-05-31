@@ -11,7 +11,7 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services)
     {
         services.AddScoped<IRepository<Choice, int>, Repository<Choice, int>>();
-        services.AddScoped<IRepository<ChoiceAnswer, object>, Repository<ChoiceAnswer, object>>();
+        services.AddScoped<IRepository<ChoiceAnswer, int>, Repository<ChoiceAnswer, int>>();
         services.AddScoped<IRepository<ClarUser, string>, Repository<ClarUser, string>>();
         services.AddScoped<IRepository<MultipleChoiceQuestion, int>, Repository<MultipleChoiceQuestion, int>>();
         services.AddScoped<IRepository<ScaleAnswer, int>, Repository<ScaleAnswer, int>>();
@@ -29,6 +29,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ITextToSpeechService, TextToSpeechService>();
         services.AddScoped<ITranslatorService, TranslatorService>();
         services.AddScoped<IScenerySynthesizerService, ScenerySynthesizerService>();
+        services.AddScoped<ISurveyService, SurveyService>();
 
         return services;
     }
