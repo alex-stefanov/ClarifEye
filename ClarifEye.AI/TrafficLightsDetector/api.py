@@ -37,7 +37,7 @@ def predict_from_image_bytes(image_bytes: bytes):
     color = CLASS_MAP.get(predicted_class, 'unknown')
     return predicted_class, color
 
-@app.post("/predict")
+@app.post("/traffic_lights/detect")
 async def predict_traffic_light(file: UploadFile = File(...)):
     try:
         image_bytes = await file.read()
