@@ -5,3 +5,33 @@
     ViewData["Title"] = "Text Detector";
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play TTS</title>
+    <style>
+        .speaker-icon {
+            cursor: pointer;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+
+    <span class="speaker-icon" onclick="playTTS('@Model.Text')">🔊</span>
+    <audio id="ttsPlayer" hidden></audio>
+
+    <script>
+        async function playTTS(text) {
+            const audio = document.getElementById('ttsPlayer');
+            const encodedText = encodeURIComponent(text);
+            const url = /api/speech/speak?text=${encodedText};
+
+            audio.src = url;
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
