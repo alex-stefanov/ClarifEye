@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         light.style.backgroundColor = "red";
     } else if (id == 1){
         light = document.querySelector('.green');
-        light.style.backgroundColor = "#90EE90";
+        light.style.backgroundColor = "#1f8037  ";
     } else if (id == 2){
         light = document.querySelector('.yellow');
         light.style.backgroundColor = "yellow";
