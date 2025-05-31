@@ -6,6 +6,7 @@ namespace ClarifEye.Web.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.TrafficLightValue = (int)type;
             return View();
         }
     }
