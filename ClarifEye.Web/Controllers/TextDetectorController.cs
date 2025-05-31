@@ -5,12 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClarifEye.Web.Controllers
 {
-    [Route("textdetector")]
-    public class TextDetectorController (ITranslatorService service, ITextToSpeechService ttsService, HttpClient httpClient) : Controller
+    public class TextDetectorController (
+        ITranslatorService service,
+        ITextToSpeechService ttsService) : Controller
     {
+        private readonly HttpClient httpClient = new();
+
         [HttpGet]
         public IActionResult Index(string result)
-        {
+       {
             TextResultViewModel resultViewModel = new TextResultViewModel();
             resultViewModel.Text = result;
             resultViewModel.Language = Common.Enums.Language.English;
@@ -23,7 +26,9 @@ namespace ClarifEye.Web.Controllers
             return RedirectToAction("Index", result);
         }
 
-        public async Task<IActionResult> Speak([FromQuery] string text, [FromQuery] string voice = "nova")
+        //TODO: when model like it
+        [Route("textdetector/speak/{text}")]
+        public async Task<IActionResult> Speak(string text, [FromQuery] string voice = "nova")
         {
             if (string.IsNullOrWhiteSpace(text))
                 return BadRequest("Text is required.");

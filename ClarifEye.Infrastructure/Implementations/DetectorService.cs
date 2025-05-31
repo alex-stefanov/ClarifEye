@@ -29,7 +29,7 @@ namespace ClarifEye.Infrastructure.Implementations
 
             try
             {
-                var response = await client.PostAsync("http://localhost:8000/trafic_lights/detect", content);
+                var response = await client.PostAsync("http://localhost:8000/traffic_lights/detect", content);
 
                 response.EnsureSuccessStatusCode();
 
