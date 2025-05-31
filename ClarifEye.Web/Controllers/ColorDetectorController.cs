@@ -10,6 +10,8 @@ namespace ClarifEye.Web.Controllers
         {
             ColorResultViewModel colorResultViewModel = new ColorResultViewModel();
             colorResultViewModel.Color = color;
+
+            ViewBag.ColorId = (int)(colorResultViewModel.Color); //int
             return View(colorResultViewModel);
         }
     }

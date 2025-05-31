@@ -7,14 +7,13 @@ using Microsoft.Extensions.Configuration;
 namespace ClarifEye.Infrastructure.Implementations;
 
 public class TextToSpeechService(
-    HttpClient httpClient,
     IConfiguration config)
         : ITextToSpeechService
 {
-    private readonly HttpClient _httpClient = httpClient;
     private readonly string _apiKey = config["OpenAI:ApiKey"];
 
     public async Task<byte[]> SynthesizeSpeechAsync(
+        HttpClient httpClient,
         string text,
         string voice = "nova")
     {
@@ -32,7 +31,7 @@ public class TextToSpeechService(
 
         request.Content = new StringContent(JsonSerializer.Serialize(body), Encoding.UTF8, "application/json");
 
-        var response = await _httpClient.SendAsync(request);
+        var response = await httpClient.SendAsync(request);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsByteArrayAsync();
