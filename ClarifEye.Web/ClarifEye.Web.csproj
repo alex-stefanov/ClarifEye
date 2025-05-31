@@ -18,7 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClarifEye.Common\ClarifEye.Common.csproj" />
     <ProjectReference Include="..\ClarifEye.Data\ClarifEye.Data.csproj" />
+    <ProjectReference Include="..\ClarifEye.Infrastructure\ClarifEye.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Detector\" />
   </ItemGroup>
 
 </Project>
