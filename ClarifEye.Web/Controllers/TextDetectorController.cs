@@ -25,6 +25,7 @@ namespace ClarifEye.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Translate (string text, Language language)
         {
+
             string result = await service.TranslateTextAsync(text, language);
             return RedirectToAction("Index", new { result = result});
         }
