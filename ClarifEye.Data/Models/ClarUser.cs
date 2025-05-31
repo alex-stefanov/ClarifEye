@@ -8,7 +8,7 @@ public class ClarUser : IdentityUser
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public int Age { get; set; }
-    public Gender Enum { get; set; }
+    public Gender Gender { get; set; }
 
     [Required]
     public bool IsFilled { get; set; }

@@ -848,12 +848,12 @@ namespace ClarifEye.Data.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("Enum")
-                        .HasColumnType("int");
-
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsFilled")
                         .HasColumnType("bit");
@@ -873,15 +873,15 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "57a86388-9a4a-4a05-811b-62cdcb95ae0b",
+                            ConcurrencyStamp = "5584aefc-d21d-437a-91b6-e3c348e7d728",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1459bf77-0e1e-4f1b-9d2a-9b660638119e",
+                            SecurityStamp = "bfc728ea-fccc-4389-8a47-adc3df0645af",
                             TwoFactorEnabled = false,
                             Age = 34,
-                            Enum = 0,
                             FirstName = "Ivan",
+                            Gender = 0,
                             IsFilled = false,
                             LastName = "Dimitrov",
                             Occupation = "Software Engineer"
@@ -890,15 +890,15 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c02952f7-9d5a-42c9-b126-77a648b18391",
+                            ConcurrencyStamp = "1ca89c78-8dd7-4924-9acf-c15c1fe83d0a",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a2c6c286-2864-4801-a25f-e7656900923c",
+                            SecurityStamp = "c3345452-d7dd-43f6-8a3e-0a7e87d1f702",
                             TwoFactorEnabled = false,
                             Age = 28,
-                            Enum = 1,
                             FirstName = "Maria",
+                            Gender = 0,
                             IsFilled = false,
                             LastName = "Petrova",
                             Occupation = "Graphic Designer"
@@ -907,15 +907,15 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "27a63e97-24a5-4994-83b2-853aa8e912d1",
+                            ConcurrencyStamp = "a2f7b33b-876d-4213-aaa7-bbc1306b920e",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1e518357-277d-4cdc-acc2-62707d5616d7",
+                            SecurityStamp = "3c963507-2ee9-4e2f-aa64-f96028bc5154",
                             TwoFactorEnabled = false,
                             Age = 45,
-                            Enum = 0,
                             FirstName = "Georgi",
+                            Gender = 0,
                             IsFilled = false,
                             LastName = "Ivanov",
                             Occupation = "Teacher"
@@ -924,15 +924,15 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e0ec446-cf47-4a8c-8cb7-f0a9e55653d1",
+                            ConcurrencyStamp = "e573410e-00d0-4f62-b54e-9245ddee15d0",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c931a4fd-2846-40d0-a935-7e2471bbdc8c",
+                            SecurityStamp = "244dcb3f-8881-4937-9340-991b5c643137",
                             TwoFactorEnabled = false,
                             Age = 22,
-                            Enum = 1,
                             FirstName = "Elena",
+                            Gender = 0,
                             IsFilled = false,
                             LastName = "Koleva",
                             Occupation = "Student"
@@ -941,15 +941,15 @@ namespace ClarifEye.Data.Migrations
                         {
                             Id = "user-5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9e7721a2-c993-46d6-931f-a5a73d02dfa7",
+                            ConcurrencyStamp = "c5a73f57-661b-49f4-9f34-1d1d540388fa",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "94f1ca17-5537-45bd-b49b-f845330d52ed",
+                            SecurityStamp = "73b75d83-9267-443d-8d88-7a233d9b7e49",
                             TwoFactorEnabled = false,
                             Age = 39,
-                            Enum = 0,
                             FirstName = "Nikolay",
+                            Gender = 0,
                             IsFilled = false,
                             LastName = "Stoyanov",
                             Occupation = "Mechanic"
