@@ -5,129 +5,128 @@ using ClarifEye.Data;
 public class Repository<TType, TId> : IRepository<TType, TId>
         where TType : class
 {
-    
-        private readonly ClarifEyeDbContext context;
-        private readonly DbSet<TType> dbSet;
 
-        public Repository(ClarifEyeDbContext context)
+    private readonly ClarifEyeDbContext context;
+    private readonly DbSet<TType> dbSet;
+
+    public Repository(ClarifEyeDbContext context)
+    {
+        this.context = context;
+        this.dbSet = this.context.Set<TType>();
+    }
+
+    public TType GetById(TId id)
+    {
+        TType? entity = this.dbSet
+            .Find(id);
+
+        if (entity == null)
         {
-            this.context = context;
-            this.dbSet = this.context.Set<TType>();
+            throw new NullReferenceException("Entity was null!");
         }
 
-        public TType GetById(TId id)
+        return entity;
+    }
+
+    public async Task<TType> GetByIdAsync(TId id)
+    {
+        TType? entity = await this.dbSet
+            .FindAsync(id);
+
+        if (entity == null)
         {
-            TType? entity = this.dbSet
-                .Find(id);
-
-            if (entity == null)
-            {
-                throw new NullReferenceException("Entity was null!");
-            }
-
-            return entity;
+            throw new NullReferenceException("Entity was null!");
         }
 
-        public async Task<TType> GetByIdAsync(TId id)
+        return entity;
+    }
+
+    public ICollection<TType> GetAll()
+    {
+        return this.dbSet.ToList();
+    }
+
+    public async Task<ICollection<TType>> GetAllAsync()
+    {
+        return await this.dbSet.ToListAsync();
+    }
+
+    public IQueryable<TType> GetAllAttached()
+    {
+        return this.dbSet.AsQueryable();
+    }
+
+    public void Add(TType item)
+    {
+        this.dbSet.Add(item);
+        this.context.SaveChanges();
+    }
+
+    public async Task AddAsync(TType item)
+    {
+        await this.dbSet.AddAsync(item);
+        await this.context.SaveChangesAsync();
+    }
+
+    public bool Delete(TId id)
+    {
+        TType entity = this.GetById(id);
+
+        if (entity == null)
         {
-            TType? entity = await this.dbSet
-                .FindAsync(id);
-
-            if (entity == null)
-            {
-                throw new NullReferenceException("Entity was null!");
-            }
-
-            return entity;
+            return false;
         }
 
-        public ICollection<TType> GetAll()
+        this.dbSet.Remove(entity);
+        this.context.SaveChanges();
+
+        return true;
+    }
+
+    public async Task<bool> DeleteAsync(TId id)
+    {
+        TType entity = await this.GetByIdAsync(id);
+
+        if (entity == null)
         {
-            return this.dbSet.ToList();
+            return false;
         }
 
-        public async Task<ICollection<TType>> GetAllAsync()
+        this.dbSet.Remove(entity);
+        await this.context.SaveChangesAsync();
+
+        return true;
+    }
+
+    public bool Update(TType item)
+    {
+        try
         {
-            return await this.dbSet.ToListAsync();
-        }
-
-        public IQueryable<TType> GetAllAttached()
-        {
-            return this.dbSet.AsQueryable();
-        }
-
-        public void Add(TType item)
-        {
-            this.dbSet.Add(item);
-            this.context.SaveChanges();
-        }
-
-        public async Task AddAsync(TType item)
-        {
-            await this.dbSet.AddAsync(item);
-            await this.context.SaveChangesAsync();
-        }
-
-        public bool Delete(TId id)
-        {
-            TType entity = this.GetById(id);
-
-            if (entity == null)
-            {
-                return false;
-            }
-
-            this.dbSet.Remove(entity);
+            this.dbSet.Attach(item);
+            this.context.Entry(item).State = EntityState.Modified;
             this.context.SaveChanges();
 
             return true;
         }
-
-        public async Task<bool> DeleteAsync(TId id)
+        catch (Exception)
         {
-            TType entity = await this.GetByIdAsync(id);
+            return false;
+        }
+    }
 
-            if (entity == null)
-            {
-                return false;
-            }
-
-            this.dbSet.Remove(entity);
+    public async Task<bool> UpdateAsync(TType item)
+    {
+        try
+        {
+            this.dbSet.Attach(item);
+            this.context.Entry(item).State = EntityState.Modified;
             await this.context.SaveChangesAsync();
 
             return true;
         }
-
-        public bool Update(TType item)
+        catch (Exception)
         {
-            try
-            {
-                this.dbSet.Attach(item);
-                this.context.Entry(item).State = EntityState.Modified;
-                this.context.SaveChanges();
-
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        public async Task<bool> UpdateAsync(TType item)
-        {
-            try
-            {
-                this.dbSet.Attach(item);
-                this.context.Entry(item).State = EntityState.Modified;
-                await this.context.SaveChangesAsync();
-
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            return false;
         }
     }
 }
