@@ -12677,13 +12677,20 @@ header.masthead {
     font-weight: bold;
     transition: background-color 0.3s ease;
     text-align: center;
+    display: block;
 }
 
     .traffic-file-label:hover {
         background-color: #45a049;
     }
 
-#traffic-file-input {
+#traffic-file-input1 {
+    display: none;
+}
+#traffic-file-input2 {
+    display: none;
+}
+#traffic-file-input3 {
     display: none;
 }
 
@@ -12696,6 +12703,7 @@ header.masthead {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    display: block;
 }
 
     .traffic-submit-button:hover {
