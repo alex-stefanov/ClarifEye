@@ -15,4 +15,5 @@ public enum Language
     Arabic = 10,
     Hindi = 11,
     Turkish = 12,
+    English = 13,
 }

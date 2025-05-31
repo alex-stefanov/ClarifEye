@@ -1,15 +1,24 @@
-﻿using ClarifEye.Web.Models;
+﻿using ClarifEye.Infrastructure.Interfaces;
+using ClarifEye.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClarifEye.Web.Controllers
 {
-    public class TextDetectorController : Controller
+    public class TextDetectorController (ITranslatorService service) : Controller
     {
+        [HttpGet]
         public IActionResult Index(string result)
         {
             TextResultViewModel resultViewModel = new TextResultViewModel();
-            resultViewModel.Result = result;
+            resultViewModel.Text = result;
+            resultViewModel.Language = Common.Enums.Language.English;
             return View(resultViewModel);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Translate (TextResultViewModel model)
+        {
+            string result = await service.TranslateTextAsync(model.Text, model.Language);
+            return RedirectToAction("Index", result);
         }
     }
 }
