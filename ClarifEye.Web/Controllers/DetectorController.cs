@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClarifEye.Web.Controllers
 {
-    public class DetectorController(IDetectorService detectorService)
+    public class DetectorController(IDetectorService detectorService, IScenerySynthesizerService sceneryService)
         : Controller
     {
         private readonly HttpClient httpClient = new();
@@ -31,6 +31,13 @@ namespace ClarifEye.Web.Controllers
         {
             Color result = await detectorService.RecognizeColor(file, httpClient);
             return RedirectToAction("Index", "ColorDetector", new { color = result });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ScenerySynthesizer(IFormFile file)
+        {
+            string result = await sceneryService.SynthesizeScenery(file, httpClient);
+            return RedirectToAction("Index", "ScenerySynthesizer", new { result = result });
         }
     }
 }
