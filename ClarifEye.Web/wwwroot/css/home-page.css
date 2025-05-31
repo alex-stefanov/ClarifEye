@@ -12682,25 +12682,17 @@ header.masthead {
     font-weight: bold;
     transition: background-color 0.3s ease;
     text-align: center;
-    display: block;
+    display: none;
 }
 
     .traffic-file-label:hover {
         background-color: #45a049;
     }
 
-#traffic-file-input1 {
+#traffic-file-input {
     display: none;
 }
-#traffic-file-input2 {
-    display: none;
-}
-#traffic-file-input3 {
-    display: none;
-}
-#traffic-file-input4 {
-    display: none;
-}
+
 
 .traffic-submit-button {
     padding: 0.7rem 1.5rem;
