@@ -16,7 +16,7 @@
             alert("Please select a vision mode before uploading a file.");
             return;
         }
-
+        console.log(selectedValue);
         // Set the action dynamically based on dropdown value
         switch (selectedValue) {
             case "text":
@@ -27,6 +27,9 @@
                 break;
             case "traffic":
                 form.action = "/Detector/TrafficLightsDetector";
+                break;
+            case "scenery":
+                form.action = "/Detector/ScenerySynthesizer"
                 break;
             default:
                 alert("Invalid vision mode selected.");
