@@ -12677,6 +12677,7 @@ header.masthead {
     font-weight: bold;
     transition: background-color 0.3s ease;
     text-align: center;
+    display: none;
 }
 
     .traffic-file-label:hover {
@@ -12696,6 +12697,7 @@ header.masthead {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    display: none;
 }
 
     .traffic-submit-button:hover {
