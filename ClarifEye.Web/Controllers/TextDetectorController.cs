@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClarifEye.Web.Controllers
 {
-    public class TextDetectorController (ITranslatorService service) : Controller
+    [Route("textdetector")]
+    public class TextDetectorController (ITranslatorService service, ITextToSpeechService ttsService, HttpClient httpClient) : Controller
     {
         [HttpGet]
         public IActionResult Index(string result)
@@ -20,6 +21,15 @@ namespace ClarifEye.Web.Controllers
         {
             string result = await service.TranslateTextAsync(model.Text, model.Language ?? Language.English);
             return RedirectToAction("Index", result);
+        }
+
+        public async Task<IActionResult> Speak([FromQuery] string text, [FromQuery] string voice = "nova")
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return BadRequest("Text is required.");
+
+            var audioBytes = await ttsService.SynthesizeSpeechAsync(httpClient ,text, voice);
+            return File(audioBytes, "audio/mpeg", "speech.mp3");
         }
     }
 }
