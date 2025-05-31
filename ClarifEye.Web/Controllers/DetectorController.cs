@@ -20,5 +20,18 @@ namespace ClarifEye.Web.Controllers
 
             return RedirectToAction("Index", "TrafficLightDetector", result);
         }
+        [HttpPost]
+        public async Task<IActionResult> TextDetector(IFormFile file)
+        {
+            string result = await detectorService.RecognizeText(file, httpClient);
+            return RedirectToAction("Index", "TextDetector", result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ColorDetector(IFormFile file)
+        {
+            Color result = await detectorService.RecognizeColor(file, httpClient);
+            return RedirectToAction("Index", "ColorDetector", result);
+        }
     }
 }

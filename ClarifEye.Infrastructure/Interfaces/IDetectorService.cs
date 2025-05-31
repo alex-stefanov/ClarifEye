@@ -11,5 +11,7 @@ namespace ClarifEye.Infrastructure.Interfaces
     public interface IDetectorService
     {
         public Task<TrafficLight> DetectTrafficLight(IFormFile image, HttpClient httpClient);
+        public Task<string> RecognizeText(IFormFile image ,HttpClient httpClient);
+        public Task<Color> RecognizeColor(IFormFile image ,HttpClient httpClient);
     }
 }
