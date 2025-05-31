@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using ClarifEye.Web.Extensions;
 using ClarifEye.Data;
 using Microsoft.EntityFrameworkCore;
+using OpenAI_API;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,12 @@ builder.Services
     .AddEntityFrameworkStores<ClarifEyeDbContext>()
     .AddUserManager<UserManager<IdentityUser>>()
     .AddSignInManager<SignInManager<IdentityUser>>();
+
+builder.Services.AddSingleton<OpenAIAPI>(sp =>
+{
+    var apiKey = builder.Configuration["OpenAI:ApiKey"];
+    return new OpenAIAPI(apiKey);
+});
 
 builder.Services
     .RegisterRepositories()
