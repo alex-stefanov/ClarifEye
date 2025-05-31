@@ -20,6 +20,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 
 <link href="css/styles.css" rel="stylesheet" />
+<script src="~/js/home.js"></script>
 
 
 <div id="page-top">
@@ -107,44 +108,26 @@
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase" id="try-now-title">Try ClarifEye For Free Now!</h2>
-                <form asp-action="TrafficLightsDetector" asp-controller="Detector" method="post" enctype="multipart/form-data" class="traffic-upload-form">
-                    <label for="traffic-file-input1" class="traffic-file-label">
+                <form method="post" enctype="multipart/form-data" class="traffic-upload-form">
+                    <input id="traffic-file-input" type="file" name="file" />
+
+                    <div class="dropdown-container">
+                        <select id="vision-mode-selector" class="custom-dropdown" name="visionMode">
+                            <option value="" disabled selected>Select a vision mode</option>
+                            <option value="text">Text Detection</option>
+                            <option value="color">Color Detection</option>
+                            <option value="traffic">Traffic Light Detection</option>
+                        </select>
+                    </div>
+                    <label for="traffic-file-input" class="traffic-file-label">
                         📁 Choose File
                     </label>
-                    <input id="traffic-file-input1" type="file" name="file" />
-                    <button type="submit" class="traffic-submit-button">Upload</button>
-                </form>
-
-                <form asp-action="TextDetector" asp-controller="Detector" method="post" enctype="multipart/form-data" class="traffic-upload-form">
-                    <label for="traffic-file-input2" class="traffic-file-label">
-                        📁 Choose File
-                    </label>
-                    <input id="traffic-file-input2" type="file" name="file" />
-
-                    <button type="submit" class="traffic-submit-button">Upload</button>
-                </form>
-                <form asp-action="ColorDetector" asp-controller="Detector" method="post" enctype="multipart/form-data" class="traffic-upload-form">
-                    <label for="traffic-file-input3" class="traffic-file-label">
-                        📁 Choose File
-                    </label>
-                    <input id="traffic-file-input3" type="file" name="file" />
-
-                    <button type="submit" class="traffic-submit-button">Upload</button>
-                </form>
-                <form asp-action="ScenerySynthesizer" asp-controller="Detector" method="post" enctype="multipart/form-data" class="traffic-upload-form">
-                    <label for="traffic-file-input4" class="traffic-file-label">
-                        📁 Choose File
-                    </label>
-                    <input id="traffic-file-input4" type="file" name="file" />
-
-                    <button type="submit" class="traffic-submit-button">Upload</button>
                 </form>
             </div>
         </div>
     </section>
 
- 
+
     <!-- Footer-->
     <footer class="footer py-4">
         <div class="container">
@@ -397,7 +380,7 @@
 </div>
 
 <script>
-        /*!
+    /*!
     * Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
     * Copyright 2013-2023 Start Bootstrap
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
