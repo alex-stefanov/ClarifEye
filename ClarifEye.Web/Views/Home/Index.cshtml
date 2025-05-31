@@ -132,6 +132,14 @@
 
                     <button type="submit" class="traffic-submit-button">Upload</button>
                 </form>
+                <form asp-action="ScenerySynthesizer" asp-controller="Detector" method="post" enctype="multipart/form-data" class="traffic-upload-form">
+                    <label for="traffic-file-input4" class="traffic-file-label">
+                        📁 Choose File
+                    </label>
+                    <input id="traffic-file-input4" type="file" name="file" />
+
+                    <button type="submit" class="traffic-submit-button">Upload</button>
+                </form>
             </div>
         </div>
     </section>

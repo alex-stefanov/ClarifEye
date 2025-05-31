@@ -12698,6 +12698,9 @@ header.masthead {
 #traffic-file-input3 {
     display: none;
 }
+#traffic-file-input4 {
+    display: none;
+}
 
 .traffic-submit-button {
     padding: 0.7rem 1.5rem;
