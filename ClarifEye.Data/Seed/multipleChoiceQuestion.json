@@ -2,10 +2,6 @@
   {
     "MultipleChoiceQuestionId": 1,
     "QuestionString": "When was your last eye exam?"
-  },
-  {
-    "MultipleChoiceQuestionId": 2,
-    "QuestionString": "How often do you use eye protection (e.g., sunglasses, safety goggles) when needed?"
   }
 ]
 

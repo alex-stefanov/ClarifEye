@@ -309,21 +309,17 @@ namespace ClarifEye.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Age", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "Enum", "FirstName", "IsFilled", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Occupation", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "user-1", 0, 34, "3f61ab8c-5f0d-4414-a890-eeb6321b704a", "ClarUser", null, false, 0, "Ivan", false, "Dimitrov", false, null, null, null, "Software Engineer", null, null, false, "6014c79c-a4c9-43f2-82d2-05dca97ab3b7", false, null },
-                    { "user-2", 0, 28, "0462e7a2-d7d8-4a8e-a103-6f1845d3ae07", "ClarUser", null, false, 1, "Maria", false, "Petrova", false, null, null, null, "Graphic Designer", null, null, false, "59bc3649-4f5c-4fa5-b249-01b7ffd77d50", false, null },
-                    { "user-3", 0, 45, "fab4b1e3-b22d-4e0c-a186-cf3c9f49179a", "ClarUser", null, false, 0, "Georgi", false, "Ivanov", false, null, null, null, "Teacher", null, null, false, "02b94d42-dd56-4148-9b59-094330601d14", false, null },
-                    { "user-4", 0, 22, "cd6dc205-851c-45b6-80eb-142c13b5ee92", "ClarUser", null, false, 1, "Elena", false, "Koleva", false, null, null, null, "Student", null, null, false, "f8ba5564-63f8-45d2-be12-42fde21eefd4", false, null },
-                    { "user-5", 0, 39, "ddaf7157-7e31-45e2-af56-bc1c254aceca", "ClarUser", null, false, 0, "Nikolay", false, "Stoyanov", false, null, null, null, "Mechanic", null, null, false, "4e46ecaa-fab7-4824-b129-11a96a620590", false, null }
+                    { "user-1", 0, 34, "57a86388-9a4a-4a05-811b-62cdcb95ae0b", "ClarUser", null, false, 0, "Ivan", false, "Dimitrov", false, null, null, null, "Software Engineer", null, null, false, "1459bf77-0e1e-4f1b-9d2a-9b660638119e", false, null },
+                    { "user-2", 0, 28, "c02952f7-9d5a-42c9-b126-77a648b18391", "ClarUser", null, false, 1, "Maria", false, "Petrova", false, null, null, null, "Graphic Designer", null, null, false, "a2c6c286-2864-4801-a25f-e7656900923c", false, null },
+                    { "user-3", 0, 45, "27a63e97-24a5-4994-83b2-853aa8e912d1", "ClarUser", null, false, 0, "Georgi", false, "Ivanov", false, null, null, null, "Teacher", null, null, false, "1e518357-277d-4cdc-acc2-62707d5616d7", false, null },
+                    { "user-4", 0, 22, "0e0ec446-cf47-4a8c-8cb7-f0a9e55653d1", "ClarUser", null, false, 1, "Elena", false, "Koleva", false, null, null, null, "Student", null, null, false, "c931a4fd-2846-40d0-a935-7e2471bbdc8c", false, null },
+                    { "user-5", 0, 39, "9e7721a2-c993-46d6-931f-a5a73d02dfa7", "ClarUser", null, false, 0, "Nikolay", false, "Stoyanov", false, null, null, null, "Mechanic", null, null, false, "94f1ca17-5537-45bd-b49b-f845330d52ed", false, null }
                 });
 
             migrationBuilder.InsertData(
                 table: "MultipleChoiceQuestions",
                 columns: new[] { "MultipleChoiceQuestionId", "QuestionString" },
-                values: new object[,]
-                {
-                    { 1, "When was your last eye exam?" },
-                    { 2, "How often do you use eye protection (e.g., sunglasses, safety goggles) when needed?" }
-                });
+                values: new object[] { 1, "When was your last eye exam?" });
 
             migrationBuilder.InsertData(
                 table: "ScaleQuestions",
