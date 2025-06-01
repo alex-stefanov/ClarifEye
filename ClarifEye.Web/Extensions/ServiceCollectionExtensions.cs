@@ -30,6 +30,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ITranslatorService, TranslatorService>();
         services.AddScoped<IScenerySynthesizerService, ScenerySynthesizerService>();
         services.AddScoped<ISurveyService, SurveyService>();
+        services.AddScoped<IStasticsService, StatisticsService>();
 
         return services;
     }

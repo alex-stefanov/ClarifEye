@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.HideNavbar = true;
+}
+@model StatisticsViewModel
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="/js/statistics.js"></script>            
+<select id="dropdown">
+    @foreach (var question in Model.Questions)
+    {
+        <option>@question</option>
+    }
+</select>
+<div id="result"></div>

@@ -11,7 +11,7 @@ public class SurveyViewModel
     public (MultipleChoiceQuestion, YesNoQuestion) FifthPart { get; set; }
 
     // Answer inputs
-    public List<ScaleAnswerInput> ScaleAnswers { get; set; } = new();
+    public List<ScaleAnswerInput> ScaleAnswers { get; set; } = new ();
     public List<YesNoAnswerInput> YesNoAnswers { get; set; } = new();
     public List<int> ChoiceAnswerIds { get; set; } = new();
 }
