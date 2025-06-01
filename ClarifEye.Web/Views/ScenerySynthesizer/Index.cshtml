@@ -1,11 +1,18 @@
 ﻿@model SceneryResultViewModel
 
-<h1>@Model.Result</h1>
+@{
+    ViewBag.HideNavbar = true;
+}
 
 <div class="traffic-light-wrapper d-flex justify-content-center align-items-center my-5">
     <h1 id="func-title">Scenery Synthesizer</h1>
     <div id="connector-container">
-        <textarea readonly class="scrollable-textarea">@Model.Result</textarea>
+        <span class="speaker-icon">🔊</span>
+        <audio id="ttsPlayer" hidden></audio>
+
+        <input type="hidden" id="text" value="@Model.Result" />
+
+        <textarea readonly id="scrollable-textarea-scenery-sint">@Model.Result</textarea>
 
         <div style="width: 2px; height: 200px; background-color: #1c1f1d; margin: 10px auto;"></div>
 

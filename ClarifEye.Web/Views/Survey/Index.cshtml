@@ -1,77 +1,109 @@
-﻿@using ClarifEye.Data.Enums
+@using ClarifEye.Data.Enums
 @model SurveyViewModel
 
+@{
+    ViewBag.HideNavbar = true;
+    int scaleIndex = 0;
+    int yesNoIndex = 0;
+}
+
 <form asp-action="SubmitSurvey" asp-controller="Survey">
-    @{
-        int scaleIndex = 0;
-        int yesNoIndex = 0;
-    }
+    <div id="survey-container">
+        <div id="inner-survey-container">
 
-    <!-- FirstPart -->
-    @for (int i = 0; i < Model.FirstPart.Count; i++, scaleIndex++)
-    {
-        <p>@Model.FirstPart[i].QuestionText</p>
-        <input type="hidden" name="ScaleAnswers[@scaleIndex].QuestionId" value="@Model.FirstPart[i].ScaleQuestionId" />
-        @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
-        {
-            <label>@enumValue</label>
-            <input type="radio" name="ScaleAnswers[@scaleIndex].Answer" value="@enumValue" />
-        }
-    }
+            <!-- FirstPart -->
+            @for (int i = 0; i < Model.FirstPart.Count; i++, scaleIndex++)
+            {
+                <p id="survey-question">@Model.FirstPart[i].QuestionText</p>
+                <div id="scale-answers">
+                    <input type="hidden" name="ScaleAnswers[@scaleIndex].QuestionId" value="@Model.FirstPart[i].ScaleQuestionId" />
+                    @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
+                    {
+                        <div id="answer-radio">
+                            <label>@enumValue</label>
+                            <input type="radio" name="ScaleAnswers[@scaleIndex].Answer" value="@enumValue" />
+                        </div>
+                    }
+                </div>
+            }
 
-    <!-- SecondPart -->
-    @for (int i = 0; i < Model.SecondPart.Count; i++, scaleIndex++)
-    {
-        <p>@Model.SecondPart[i].QuestionText</p>
-        <input type="hidden" name="ScaleAnswers[@scaleIndex].QuestionId" value="@Model.SecondPart[i].ScaleQuestionId" />
-        @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
-        {
-            <label>@enumValue</label>
-            <input type="radio" name="ScaleAnswers[@scaleIndex].Answer" value="@enumValue" />
-        }
-    }
+            <!-- SecondPart -->
+            @for (int i = 0; i < Model.SecondPart.Count; i++, scaleIndex++)
+            {
+                <p id="survey-question">@Model.SecondPart[i].QuestionText</p>
+                <div id="scale-answers">
+                    <input type="hidden" name="ScaleAnswers[@scaleIndex].QuestionId" value="@Model.SecondPart[i].ScaleQuestionId" />
+                    @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
+                    {
+                        <div id="answer-radio">
+                            <label>@enumValue</label>
+                            <input type="radio" name="ScaleAnswers[@scaleIndex].Answer" value="@enumValue" />
+                        </div>
+                    }
+                </div>
+            }
 
-    <!-- ThirdPart -->
-    @for (int i = 0; i < Model.ThirdPart.Count; i++, scaleIndex++)
-    {
-        <p>@Model.ThirdPart[i].QuestionText</p>
-        <input type="hidden" name="ScaleAnswers[@scaleIndex].QuestionId" value="@Model.ThirdPart[i].ScaleQuestionId" />
-        @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
-        {
-            <label>@enumValue</label>
-            <input type="radio" name="ScaleAnswers[@scaleIndex].Answer" value="@enumValue" />
-        }
-    }
+            <!-- ThirdPart -->
+            @for (int i = 0; i < Model.ThirdPart.Count; i++, scaleIndex++)
+            {
+                <p id="survey-question">@Model.ThirdPart[i].QuestionText</p>
+                <div id="scale-answers">
+                    <input type="hidden" name="ScaleAnswers[@scaleIndex].QuestionId" value="@Model.ThirdPart[i].ScaleQuestionId" />
+                    @foreach (var enumValue in Enum.GetValues<ScaleEnum>())
+                    {
+                        <div id="answer-radio">
+                            <label>@enumValue</label>
+                            <input type="radio" name="ScaleAnswers[@scaleIndex].Answer" value="@enumValue" />
+                        </div>
+                    }
+                </div>
+            }
 
-    <!-- FourthPart (YesNo Questions) -->
-    @for (int i = 0; i < Model.FourthPart.Count; i++, yesNoIndex++)
-    {
-        <p>@Model.FourthPart[i].QuestionText</p>
-        <input type="hidden" name="YesNoAnswers[@yesNoIndex].QuestionId" value="@Model.FourthPart[i].YesNoQuestionId" />
-        @foreach (var enumValue in Enum.GetValues<YesNoEnum>())
-        {
-            <label>@enumValue</label>
-            <input type="radio" name="YesNoAnswers[@yesNoIndex].Answer" value="@enumValue" />
-        }
-    }
-    <!-- FifthPart (MultipleChoice and one YesNo) -->
-    <p>@Model.FifthPart.Item1.QuestionString</p>
-    @for (int i = 0; i < Model.FifthPart.Item1.Choices.Count; i++)
-    {
-        <label>@Model.FifthPart.Item1.Choices.ToList()[i].AnswerString</label>
-        <input type="radio" name="ChoiceAnswerIds" value="@Model.FifthPart.Item1.Choices.ToList()[i].MultipleChoiceQuestionId" />
-    }
+            <!-- FourthPart (Yes/No Questions) -->
+            @for (int i = 0; i < Model.FourthPart.Count; i++, yesNoIndex++)
+            {
+                <p id="survey-question">@Model.FourthPart[i].QuestionText</p>
+                <div id="y-n-answers">
+                    <input type="hidden" name="YesNoAnswers[@yesNoIndex].QuestionId" value="@Model.FourthPart[i].YesNoQuestionId" />
+                    @foreach (var enumValue in Enum.GetValues<YesNoEnum>())
+                    {
+                        <div id="answer-radio">
+                            <label>@enumValue</label>
+                            <input type="radio" name="YesNoAnswers[@yesNoIndex].Answer" value="@enumValue" />
+                        </div>
+                    }
+                </div>
+            }
 
-    <p>@Model.FifthPart.Item2.QuestionText</p>
-    <input type="hidden" name="YesNoAnswers[@yesNoIndex].QuestionId" value="@Model.FifthPart.Item2.YesNoQuestionId" />
-    @foreach (var enumValue in Enum.GetValues<YesNoEnum>())
-    {
-        <label>@enumValue</label>
-        <input type="radio" name="YesNoAnswers[@yesNoIndex].Answer" value="@enumValue" />
-    }
-    @{
-        yesNoIndex++; // Move to next index if more YesNo questions are added later
-    }
+            <!-- FifthPart - Multiple Choice -->
+            <p id="survey-question">@Model.FifthPart.Item1.QuestionString</p>
+            <div id="scale-answers">
+                @for (int i = 0; i < Model.FifthPart.Item1.Choices.Count; i++)
+                {
+                    <div id="answer-radio">
+                        <label>@Model.FifthPart.Item1.Choices[i].AnswerString</label>
+                        <input type="radio" name="ChoiceAnswerIds" value="@Model.FifthPart.Item1.Choices[i].MultipleChoiceQuestionId" />
+                    </div>
+                }
+            </div>
 
-    <button type="submit">Submit</button>
+            <!-- FifthPart - One last Yes/No Question -->
+            <p id="survey-question">@Model.FifthPart.Item2.QuestionText</p>
+            <div id="y-n-answers">
+                <input type="hidden" name="YesNoAnswers[@yesNoIndex].QuestionId" value="@Model.FifthPart.Item2.YesNoQuestionId" />
+                @foreach (var enumValue in Enum.GetValues<YesNoEnum>())
+                {
+                    <div id="answer-radio">
+                        <label>@enumValue</label>
+                        <input type="radio" name="YesNoAnswers[@yesNoIndex].Answer" value="@enumValue" />
+                    </div>
+                }
+            </div>
+            @{
+                yesNoIndex++; // Prepare for possible additional YesNo questions
+            }
+
+            <button type="submit">Submit</button>
+        </div>
+    </div>
 </form>

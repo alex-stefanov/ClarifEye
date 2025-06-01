@@ -37,8 +37,8 @@
 }
 
 .scrollable-textarea {
-    resize: vertical; /* Optional: allows user to resize vertically */
-    overflow: auto; /* Shows scrollbars when needed */
+    resize: vertical; 
+    overflow: auto; 
     padding: 10px;
     font-size: 16px;
     line-height: 1.4;
@@ -51,5 +51,22 @@
     border-radius: 10px;
     border: 2px solid #388578;
     margin: 1.1em;
+}
+
+#scrollable-textarea-scenery-sint {
+    resize: vertical;
+    overflow: auto;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    height: 280px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border-radius: 10px;
+    border: 2px solid #388578;
+    margin: 1em;
 }
 
