@@ -12655,11 +12655,15 @@ header.masthead {
     margin-right: auto;
 }
 
-    #portfolio .portfolio-item .portfolio-link {
-        position: relative;
-        display: block;
-        margin: 0 auto;
-    }
+#portfolio {
+    border: 2px solid #519E8A;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
 .traffic-upload-form {
     display: flex;
     flex-direction: column;
