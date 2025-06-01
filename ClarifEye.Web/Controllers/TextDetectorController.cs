@@ -13,7 +13,7 @@ namespace ClarifEye.Web.Controllers
 
         [HttpGet]
         public IActionResult Index(string result)
-       {
+        {
             TextResultViewModel resultViewModel = new()
             {
                 Text = result,

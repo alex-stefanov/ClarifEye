@@ -37,7 +37,6 @@ namespace ClarifEye.Infrastructure.Implementations
         }
         public async Task<Dictionary<string, int>> FetchQuestionData(string question)
         {
-
             if (await mCQRepository.GetAllAttached().AnyAsync(x => x.QuestionString == question))
             {
                 var questionEntity = await mCQRepository.GetAllAttached().FirstOrDefaultAsync(x => x.QuestionString == question);
@@ -79,9 +78,10 @@ namespace ClarifEye.Infrastructure.Implementations
             }
             else // YesNoQuestions
             {
+                //Yes no is not returned correctly
                 var questionEntity = yNQRepository.GetAllAttached().FirstOrDefault(x => x.QuestionText == question);
                 List<YesNoEnum> yesNoEnums = Enum.GetValues(typeof(YesNoEnum)).Cast<YesNoEnum>().ToList();
-                var yesNoAnswers = await yNARepository.GetAllAttached().Where(x => yesNoEnums.Contains(x.SelectedOption) && x.YesNoAnswerId == questionEntity.YesNoQuestionId).ToListAsync();
+                var yesNoAnswers = await yNARepository.GetAllAttached().Where(x => yesNoEnums.Contains(x.SelectedOption) && x.YesNoQuestionId == questionEntity.YesNoQuestionId).ToListAsync();
                 Dictionary<string, int> timesAnswered = new Dictionary<string, int>();
 
                 foreach (var yesNoEnum in yesNoEnums)

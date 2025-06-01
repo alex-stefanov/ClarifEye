@@ -3,7 +3,7 @@
 }
 @model StatisticsViewModel
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="/js/statistics.js"></script>            
+<link rel="stylesheet" href="~/css/statistics.css" />
 <select id="dropdown">
     @foreach (var question in Model.Questions)
     {
@@ -11,3 +11,6 @@
     }
 </select>
 <div id="result"></div>
+
+
+<script src="/js/statistics.js"></script>

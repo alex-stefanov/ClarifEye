@@ -81,8 +81,8 @@
                 @for (int i = 0; i < Model.FifthPart.Item1.Choices.Count; i++)
                 {
                     <div id="answer-radio">
-                        <label>@Model.FifthPart.Item1.Choices[i].AnswerString</label>
-                        <input type="radio" name="ChoiceAnswerIds" value="@Model.FifthPart.Item1.Choices[i].MultipleChoiceQuestionId" />
+                        <label>@Model.FifthPart.Item1.Choices.ToList()[i].AnswerString</label>
+                        <input type="radio" name="ChoiceAnswerIds" value="@Model.FifthPart.Item1.Choices.ToList()[i].MultipleChoiceQuestionId" />
                     </div>
                 }
             </div>

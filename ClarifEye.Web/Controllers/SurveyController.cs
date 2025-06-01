@@ -28,7 +28,7 @@ namespace ClarifEye.Web.Controllers
 
             var firstInput = model.ScaleAnswers.Select(x => (x.QuestionId, x.Answer)).ToList();
             var secondInput = model.YesNoAnswers.Select(x => (x.QuestionId, x.Answer)).ToList();
-            var result = surveyService.SaveSurvey(user.Id, firstInput, secondInput, model.ChoiceAnswerIds);
+            await surveyService.SaveSurvey(user.Id, firstInput, secondInput, model.ChoiceAnswerIds);
 
             return RedirectToAction("Index", "Home");
         } 

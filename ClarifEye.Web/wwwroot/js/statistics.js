@@ -12,14 +12,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(data => {
-                const formattedData = Object.entries(data).map(([key, value]) => ({
-                    name: key,
-                    value: value
-                }));
+                // Filter out answers with value 0
+                const formattedData = Object.entries(data.received)
+                    .filter(([_, value]) => value > 0)
+                    .map(([key, value]) => ({
+                        name: key,
+                        value: value
+                    }));
 
-                console.log(formattedData)
+                console.log(formattedData);
 
-                const width = 600; // you need to define this
+                const resultDiv = document.querySelector("#result");
+                resultDiv.innerHTML = "";
+
+                if (formattedData.length === 0) {
+                    resultDiv.innerHTML = "<p>No responses for this question yet.</p>";
+                    return;
+                }
+
+                const width = 600;
                 const height = Math.min(width, 500);
                 const radius = Math.min(width, height) / 2;
 
@@ -34,13 +45,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const color = d3.scaleOrdinal()
                     .domain(formattedData.map(d => d.name))
-                    .range(d3.quantize(t => d3.interpolateSpectral(t * 0.8 + 0.1), formattedData.length).reverse());
+                    .range(
+                        formattedData.length > 1
+                            ? d3.quantize(t => d3.interpolateSpectral(t * 0.8 + 0.1), formattedData.length).reverse()
+                            : ["#4e79a7"] // fallback color when only one slice
+                    );
 
                 const svg = d3.create("svg")
                     .attr("width", width)
                     .attr("height", height)
                     .attr("viewBox", [-width / 2, -height / 2, width, height])
-                    .attr("style", "max-width: 100%; height: auto;");
+                    .attr("style", "max-width: 100%; height: auto; display: block; margin: 0 auto;");
 
                 svg.append("g")
                     .selectAll()
@@ -69,8 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         .attr("fill-opacity", 0.7)
                         .text(d => d.data.value.toLocaleString("en-US")));
 
-                document.querySelector("#result").appendChild(svg.node());
+                resultDiv.appendChild(svg.node());
             });
-
     });
 });
