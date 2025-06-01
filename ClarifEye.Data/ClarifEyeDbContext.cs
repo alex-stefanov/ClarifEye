@@ -21,7 +21,7 @@ public class ClarifEyeDbContext
         if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder.UseSqlServer(
-                "Server=DESKTOP-6VQ6QDR\\SQLEXPRESS;Database=ClarifEye;Integrated Security=true;TrustServerCertificate=true;");
+                "Server=localhost,1433;Database=FarmOu;User Id=sa;Password=Str0ngPa$$w0rd;TrustServerCertificate=True");
         }
     }
 

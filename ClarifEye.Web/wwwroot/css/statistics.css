@@ -4,3 +4,7 @@
     align-items: center;
     padding: 2rem;
 }
+#dropdown{
+    display: block;
+    margin: 30px auto
+}
