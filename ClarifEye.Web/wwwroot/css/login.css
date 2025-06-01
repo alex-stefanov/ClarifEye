@@ -1,0 +1,71 @@
+﻿#main-log-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #519e8a;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 128, 96, 0.2);
+    max-width: 1500px;
+    height: 650px;
+    margin: 50px auto;
+}
+
+#log-sec-container form {
+    background-color: #DBF9F0;
+    padding: 30px;
+    border-radius: 15px;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-top: 2em;
+    width: 800px;
+}
+
+#login-links {
+    color: #519e8a;
+}
+
+#log-sec-container form {
+    height: 70vh;
+}
+
+h2 {
+    color: #055c49;
+}
+
+label,
+.form-label {
+    color: #055c49;
+    font-weight: 600;
+}
+
+.form-control,
+.form-check-input {
+    background-color: white;
+    border: 1px solid #60c3a1;
+    color: #055c49;
+}
+
+.form-control:focus {
+    border-color: #3dbb96;
+    box-shadow: 0 0 5px #3dbb96;
+}
+
+.form-check-input:checked {
+    background-color: #60c3a1;
+    border-color: #3dbb96;
+}
+
+.text-danger {
+    color: #ff4d4d;
+}
+
+#registerSubmit {
+    background-color: #519e8a;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+    #registerSubmit:hover {
+        background-color: #2ca986;
+    }

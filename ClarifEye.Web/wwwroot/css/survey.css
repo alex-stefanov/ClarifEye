@@ -9,9 +9,8 @@
 
 #inner-survey-container {
     background-color: white;
-    width: 900px;
+    width: 550px;
     padding: 1em;
-    
     border-radius: 15px;
 }
 
@@ -36,4 +35,30 @@
     display: flex;
     gap: 2em;
     margin-bottom: 2em;
+}
+
+#submit-survey {
+    width: 260px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: #393d3c;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px
+}
+
+#submit-survey:hover {
+    width: 260px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: #1c1f1e;
+    color: white;
+    border-radius: 10px
+}
+
+#sumbit-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
