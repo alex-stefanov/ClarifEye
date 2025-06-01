@@ -1,0 +1,39 @@
+﻿#survey-container {
+    width: 1450px;
+    background-color: #95dec2;
+    height: 2200px;
+    padding: 3em;
+    display: flex;
+    justify-content: center
+}
+
+#inner-survey-container {
+    background-color: white;
+    width: 900px;
+    padding: 1em;
+    
+    border-radius: 15px;
+}
+
+#scale-answers {
+    width: 900px;
+    display: flex;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+#answer-radio {
+    display: flex;
+    gap: 0.5em;
+}
+
+#survey-question {
+    font-weight: 700;
+}
+
+#y-n-answers {
+    width: 900px;
+    display: flex;
+    gap: 2em;
+    margin-bottom: 2em;
+}
