@@ -43,6 +43,8 @@ color-and-traffic-light {
     width: 400px;
     height: 100%;
     display: flex;
+    font-weight: 700;
+    font-size: 20px;
     justify-content: center;
     align-items: center;
 }
